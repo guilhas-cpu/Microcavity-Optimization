@@ -1,0 +1,62 @@
+ULTIMOS RESULTADOS
+
+
+
+
+dado: C:\Users\danic\OneDrive - ufmg.br\Desktop\Nanocomp_DifferentialEvolution\Dados\2020_2_27-5h37min.mat
+RESULTADOS BASE						NOVOS RESULTADOS					PERCENTUAL DE MELHORA
+beta = 1.183741e-02					beta = 1.180350e-02 					(-0.286485%)
+Q = 5.281276e+03					Q = 7.237289e+03 					(37.036749%)
+Fp = 1.718943e-01					Fp = 2.392704e-01 					(39.196254%)
+DN = 9.397523e+08					DN = 3.337954e+08 					(181.535447%)
+CavityLoss = 9.546695e-08				CavityLoss = 4.733623e-08 				(101.678407%)
+Distance = 9.381136e-01					Distance = 3.442362e+00 				(-72.747972%)
+Reflec_min= 6.076570e-01				Reflec_min = 7.055780e-01 				(-13.878119%)
+
+
+
+dado: C:\Users\danic\OneDrive - ufmg.br\Desktop\Nanocomp_DifferentialEvolution\Dados\2020_2_27-6h41min.mat
+RESULTADOS BASE						NOVOS RESULTADOS					PERCENTUAL DE MELHORA
+beta = 1.183741e-02					beta = 1.176725e-02 					(-0.592702%)
+Q = 5.281276e+03					Q = 6.611003e+03 					(25.178138%)
+Fp = 1.718943e-01					Fp = 3.015422e-01 					(75.423030%)
+DN = 9.397523e+08					DN = 1.942387e+08 					(383.813127%)
+CavityLoss = 9.546695e-08				CavityLoss = 3.482121e-08 				(174.163190%)
+Distance = 9.381136e-01					Distance = 1.090626e+01 				(-91.398389%)
+Reflec_min= 6.076570e-01				Reflec_min = 5.419607e-01 				(12.121966%)
+
+
+
+dado: C:\Users\danic\OneDrive - ufmg.br\Desktop\Nanocomp_DifferentialEvolution\Dados\2020_2_27-7h44min.mat
+RESULTADOS BASE						NOVOS RESULTADOS					PERCENTUAL DE MELHORA
+beta = 1.183741e-02					beta = 1.175657e-02 					(-0.682927%)
+Q = 5.281276e+03					Q = 1.058468e+04 					(100.418984%)
+Fp = 1.718943e-01					Fp = 4.667615e-01 					(171.539822%)
+DN = 9.397523e+08					DN = 6.358319e+07 					(1377.988562%)
+CavityLoss = 9.546695e-08				CavityLoss = 1.766004e-08 				(440.581646%)
+Distance = 9.381136e-01					Distance = 2.237000e+01 				(-95.806376%)
+Reflec_min= 6.076570e-01				Reflec_min = 9.967057e-01 				(-39.033456%)
+
+
+
+dado: C:\Users\danic\OneDrive - ufmg.br\Desktop\Nanocomp_DifferentialEvolution\Dados\2020_2_27-8h48min.mat
+RESULTADOS BASE						NOVOS RESULTADOS					PERCENTUAL DE MELHORA
+beta = 1.183741e-02					beta = 1.178040e-02 					(-0.481626%)
+Q = 5.281276e+03					Q = 7.229718e+03 					(36.893386%)
+Fp = 1.718943e-01					Fp = 2.512618e-01 					(46.172269%)
+DN = 9.397523e+08					DN = 1.047797e+08 					(796.884242%)
+CavityLoss = 9.546695e-08				CavityLoss = 1.563430e-08 				(510.624906%)
+Distance = 9.381136e-01					Distance = 2.509376e+00 				(-62.615660%)
+Reflec_min= 6.076570e-01				Reflec_min = 8.588279e-01 				(-29.245780%)
+
+
+
+dado: C:\Users\danic\OneDrive - ufmg.br\Desktop\Nanocomp_DifferentialEvolution\Dados\2020_2_27-9h53min.mat
+RESULTADOS BASE						NOVOS RESULTADOS					PERCENTUAL DE MELHORA
+beta = 1.183741e-02					beta = 1.182756e-02 					(-0.083227%)
+Q = 5.281276e+03					Q = 6.942316e+03 					(31.451483%)
+Fp = 1.718943e-01					Fp = 2.253598e-01 					(31.103699%)
+DN = 9.397523e+08					DN = 9.943995e+07 					(845.045043%)
+CavityLoss = 9.546695e-08				CavityLoss = 1.325492e-08 				(620.237618%)
+Distance = 9.381136e-01					Distance = 4.241588e-01 				(121.170356%)
+Reflec_min= 6.076570e-01				Reflec_min = 9.084709e-01 				(-33.112109%)

@@ -59,7 +59,7 @@ EgGaAs
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 lambda_1 = linspace(700, lambdaR - 30, 500); %Spectrum
-lambda_2 = linspace(lambdaR - 30, lambdaR + 30, 2000); %Spectrum
+lambda_2 = linspace(lambdaR - 30, lambdaR + 30, 5000); %Spectrum
 lambda_3 = linspace(lambdaR + 30, 1100, 500); %Spectrum
 lambda = [lambda_1 lambda_2 lambda_3];
 

@@ -358,7 +358,7 @@ function z = Reflectance_adapted(vars)
     end
     
     data = [lambda' R'];
-    save('Reflectance.dat','data','-ascii')
+    save('Reflectance.dat','data','-ascii');
     % figure(4)
     % plot(lambda,absMic)
     % xlabel('Wavelength (nm)')
@@ -438,8 +438,8 @@ function z = Reflectance_adapted(vars)
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     %Cavity resonance, linewidth and Q factor
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    lambmin = 900-range;
-    lambmax = 900+range;
+    lambmin = 890-range;
+    lambmax = 890+range;
 
 
     for b=1:length(lambda)
@@ -538,6 +538,7 @@ function z = Reflectance_adapted(vars)
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     if ((exist('wg','var'))&&(exist('wp','var'))&&(exist('yg','var'))&&(exist('yp','var')))     
         FHWM = ((lambda(wg)+ lambda(wp)) - (lambda(yg) + lambda(yp)))/2;
+        
     else
         FHWM = 1;
         erro = 1;
