@@ -211,6 +211,7 @@ for b = (fim+1):np %Substrate
     end
 end
 
+
 if(plota)
     figure()
     plot(z,ri)
@@ -218,6 +219,7 @@ if(plota)
     ylabel('Refractive Index')
     title('Refractive Index Pattern','FontSize',10)
 end
+
 return
 end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -340,7 +342,7 @@ if s == 1 %lambda/2 cavity
 else %s>1
     if N == 0
         if(print)
-            disp('Passive cavity!');
+        	disp('Passive cavity!');
         end
         n = length(x);
         x(n+1) = s*lambdaR/(2*n3R) + shift/s;%Cavity
@@ -510,8 +512,8 @@ n = length(x);
    %Constructing the botom DBR
     if n3R <= n2R
         %disp('OK!');
-        xe = x1;
-        xeT = x1T;
+        xe = x2;
+        xeT = x2T;
         for j = 1 : (2*nci)+1%Extra layer
             if rem(j,2) == 0      
                 x(n+j)= xe; %Thickness of 1st layer (AlAs) at 300K [nm].

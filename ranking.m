@@ -11,7 +11,7 @@ for i=1:tamanho(1)
    dado = string(ds.Files(i)); 
    load(dado);
    %fator de qualidade
-   if(z(2)<5000)
+   if(z(2)<6000)
        bad = 1;
    elseif(size(z)<7)
        bad = 1;
@@ -22,6 +22,7 @@ for i=1:tamanho(1)
    else
        bad = 0;
        bons = bons+1;
+       vars = vars
        rank(bons) = dado;
    end
 end

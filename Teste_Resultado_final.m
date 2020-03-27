@@ -13,8 +13,9 @@ iter = 0;
 maior = zeros(1,7); %valor default para não ter conflito
 METODO = 1; %valor default
 %Dê load no arquivo que tem os resultados
-load('./Dados/2020_2_25-9h4min.mat')
+load('./Dados/2020_03_26-21h25min.mat')
 
+a = parametrosOtimizacao;
 result = Reflectance_adapted(vars); %registra os resultados dos objetivos
 original = [1.183741e-02 5.281276e+03 1.718943e-01 9.397523e+08 9.546695e-08 9.381136e-01 6.076570e-01]; 
 melhora = [result(1)/original(1) result(2)/original(2) result(3)/original(3) original(4)/result(4) original(5)/result(5) original(6)/result(6) original(7)/result(7)] - 1; %registra a melhora em relação aos resultados base (enviado pelo professor cotta)
@@ -30,3 +31,8 @@ fprintf('CavityLoss = 9.546695e-08\t\t\tCavityLoss = %d \t\t\t(%f%%)\n',result(5
 fprintf('Distance = 9.381136e-01\t\t\t\tDistance = %d \t\t\t(%f%%)\n',result(6),melhora(6));
 fprintf('Reflec_min= 6.076570e-01\t\t\t\tReflec_min = %d \t\t\t(%f%%)\n',result(7),melhora(7)); 
 
+figure()
+plot(1:a.rodadas, a.maiorFITGer(1:a.rodadas));
+title('Evolucao do melhor fitness ao longo das gerações');
+xlabel('Geração');
+ylabel('Fitness')

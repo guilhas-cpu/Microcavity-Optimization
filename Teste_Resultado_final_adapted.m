@@ -18,6 +18,7 @@ function fim = Teste_Resultado_final_adapted(dado,name)
     melhora = melhora*100;
 
     fileID = fopen(name,'a');
+    z = result;
     
     fprintf(fileID,'\n\n\ndado: %s',dado)
     fprintf(fileID,'\nRESULTADOS BASE\t\t\t\t\t\tNOVOS RESULTADOS\t\t\t\t\tPERCENTUAL DE MELHORA\n');
@@ -31,5 +32,7 @@ function fim = Teste_Resultado_final_adapted(dado,name)
     
     fclose(fileID);
     
-    %save(dado,'vars','z','norm_z','PESO','countSuccesses','countErrors','METODO','maior','range','iter')
+    if(strcmp(name,'restore.txt'))
+        save(dado,'vars','z','norm_z','PESO','countSuccesses','countErrors','METODO','maior','range','iter')
+    end
 end

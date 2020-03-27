@@ -5,11 +5,19 @@ global print;
 global plota;
 global range;
 global erro;
-print = 1;
-plota = 1;
+print = 0;
+plota = 0;
 range = 20;
 erro = 0;
-load('./Erros/erro5.mat')
+
+ds = datastore("./Erros",'FileExtensions',{'.mat'},'Type','tabulartext');
+tamanho = size(ds.Files);
 
 
-z = Reflectance_adapted(vars)
+for i=1:tamanho(1)
+   dado = string(ds.Files(i)); 
+   load(dado)
+   dado = dado
+   vars = vars
+end
+%z = Reflectance_adapted(vars)

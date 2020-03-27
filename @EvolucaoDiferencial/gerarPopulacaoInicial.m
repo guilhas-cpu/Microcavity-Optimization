@@ -2,7 +2,7 @@
 % Aqui pegamos um ponto de referencia (candidato_inicial) e adicionamos um
 % valor aleatorio dentro de limites para gerar populacoes iniciais
 function gerarPopulacaoInicial(obj)
-
+    global numIndiv;
     global erro;
 
     % Inicializa a matriz com informacao de candidatos a solucao
@@ -17,6 +17,7 @@ function gerarPopulacaoInicial(obj)
     
     i = 1;
     while i~=obj.num_individuos+1
+        numIndiv = i;
         for j=1:obj.num_parametros
             % Limites inferior e superior do parametro
             limi = obj.parametros(j).liminferior;

@@ -1,8 +1,9 @@
 function gerarNovaPopulacao(obj)
-
+    global geracao numIndiv;
     i = 1;
+    geracao = obj.rodadas+1;
     while i~=obj.num_individuos+1
-        
+        numIndiv = i;
         individuo = obj.populacao(i).parametros;
         vetor_ruido = gerarMutacao(obj, individuo, i);
         cruzamento = obj.gerarCruzamento(individuo, vetor_ruido);
