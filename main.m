@@ -25,8 +25,8 @@ while(iter<10)
         countErrors = 0;
         countSuccesses = 0;
         countGen = 0;
-        saveErrors = 1;
-        PESO = [5 20+2*iter 1 5 6 6 25]; %favor escolher valores maiores ou iguais a 1. 
+        saveErrors = 0;
+        PESO = [5 20 1 5 6 6+2*iter 25]; %favor escolher valores maiores ou iguais a 1. 
         %Quanto maior o peso, maior a relevância do objetivo caso metodo 1 e o contrario caso metodo 2
 
         inicializacoes();

@@ -3,60 +3,60 @@ ULTIMOS RESULTADOS
 
 
 
-dado: C:\Users\danic\OneDrive - ufmg.br\Desktop\Nanocomp_DifferentialEvolution\Dados\2020_03_03-05h07min.mat
+dado: C:\Users\gui_s\Documents\Linux-W\Git\Microcavity-Optimization\Dados\2020_03_27-23h38min.mat
 RESULTADOS BASE						NOVOS RESULTADOS					PERCENTUAL DE MELHORA
-beta = 1.183741e-02					beta = 1.178508e-02 					(-0.442063%)
-Q = 5.281276e+03					Q = 6.952378e+03 					(31.642015%)
-Fp = 1.718943e-01					Fp = 2.375878e-01 					(38.217408%)
-DN = 9.397523e+08					DN = 3.133802e+08 					(199.876141%)
-CavityLoss = 9.546695e-08				CavityLoss = 4.419755e-08 				(116.000570%)
-Distance = 9.381136e-01					Distance = 1.712416e+00 				(-45.216972%)
-Reflec_min= 6.076570e-01				Reflec_min = 7.245475e-01 				(-16.132899%)
+beta = 1.183741e-02					beta = 1.180318e-02 					(-0.289157%)
+Q = 5.281276e+03					Q = 6.173836e+03 					(16.900463%)
+Fp = 1.718943e-01					Fp = 2.039103e-01 					(18.625386%)
+DN = 9.397523e+08					DN = 5.747458e+08 					(63.507463%)
+CavityLoss = 9.546695e-08				CavityLoss = 6.946258e-08 				(37.436525%)
+Distance = 9.381136e-01					Distance = 8.402420e-01 				(11.648019%)
+Reflec_min= 6.076570e-01				Reflec_min = 5.290439e-01 				(14.859465%)
 
 
 
-dado: C:\Users\danic\OneDrive - ufmg.br\Desktop\Nanocomp_DifferentialEvolution\Dados\2020_03_03-06h43min.mat
+dado: C:\Users\gui_s\Documents\Linux-W\Git\Microcavity-Optimization\Dados\2020_03_28-01h02min.mat
 RESULTADOS BASE						NOVOS RESULTADOS					PERCENTUAL DE MELHORA
-beta = 1.183741e-02					beta = 1.183701e-02 					(-0.003355%)
-Q = 5.281276e+03					Q = 6.572415e+03 					(24.447476%)
-Fp = 1.718943e-01					Fp = 2.169742e-01 					(26.225343%)
-DN = 9.397523e+08					DN = 1.314664e+08 					(614.823328%)
-CavityLoss = 9.546695e-08				CavityLoss = 1.685837e-08 				(466.288089%)
-Distance = 9.381136e-01					Distance = 5.657205e+00 				(-83.417367%)
-Reflec_min= 6.076570e-01				Reflec_min = 5.691575e-01 				(6.764297%)
+beta = 1.183741e-02					beta = 1.175456e-02 					(-0.699933%)
+Q = 5.281276e+03					Q = 1.124811e+04 					(112.980821%)
+Fp = 1.718943e-01					Fp = 4.826459e-01 					(180.780641%)
+DN = 9.397523e+08					DN = 3.593106e+07 					(2515.431470%)
+CavityLoss = 9.546695e-08				CavityLoss = 1.032114e-08 				(824.965563%)
+Distance = 9.381136e-01					Distance = 1.165841e+01 				(-91.953329%)
+Reflec_min= 6.076570e-01				Reflec_min = 5.458522e-01 				(11.322635%)
 
 
 
-dado: C:\Users\danic\OneDrive - ufmg.br\Desktop\Nanocomp_DifferentialEvolution\Dados\2020_03_03-08h22min.mat
+dado: C:\Users\gui_s\Documents\Linux-W\Git\Microcavity-Optimization\Dados\2020_03_28-02h30min.mat
 RESULTADOS BASE						NOVOS RESULTADOS					PERCENTUAL DE MELHORA
-beta = 1.183741e-02					beta = 1.178313e-02 					(-0.458524%)
-Q = 5.281276e+03					Q = 6.953941e+03 					(31.671600%)
-Fp = 1.718943e-01					Fp = 2.365861e-01 					(37.634666%)
-DN = 9.397523e+08					DN = 1.990334e+08 					(372.158203%)
-CavityLoss = 9.546695e-08				CavityLoss = 2.795693e-08 				(241.478701%)
-Distance = 9.381136e-01					Distance = 1.912456e+00 				(-50.947193%)
-Reflec_min= 6.076570e-01				Reflec_min = 7.720721e-01 				(-21.295300%)
+beta = 1.183741e-02					beta = 1.176300e-02 					(-0.628624%)
+Q = 5.281276e+03					Q = 1.243334e+04 					(135.423009%)
+Fp = 1.718943e-01					Fp = 4.474991e-01 					(160.333884%)
+DN = 9.397523e+08					DN = 9.400457e+07 					(899.687899%)
+CavityLoss = 9.546695e-08				CavityLoss = 2.501832e-08 				(281.588149%)
+Distance = 9.381136e-01					Distance = 7.009476e+00 				(-86.616494%)
+Reflec_min= 6.076570e-01				Reflec_min = 4.069323e-01 				(49.326325%)
 
 
 
-dado: C:\Users\danic\OneDrive - ufmg.br\Desktop\Nanocomp_DifferentialEvolution\Dados\2020_03_03-09h57min.mat
+dado: C:\Users\gui_s\Documents\Linux-W\Git\Microcavity-Optimization\Dados\2020_03_28-03h53min.mat
 RESULTADOS BASE						NOVOS RESULTADOS					PERCENTUAL DE MELHORA
-beta = 1.183741e-02					beta = 1.177667e-02 					(-0.513157%)
-Q = 5.281276e+03					Q = 6.971753e+03 					(32.008877%)
-Fp = 1.718943e-01					Fp = 2.570260e-01 					(49.525629%)
-DN = 9.397523e+08					DN = 9.755165e+07 					(863.338143%)
-CavityLoss = 9.546695e-08				CavityLoss = 1.489445e-08 				(540.956571%)
-Distance = 9.381136e-01					Distance = 4.192913e+00 				(-77.626207%)
-Reflec_min= 6.076570e-01				Reflec_min = 8.237377e-01 				(-26.231736%)
+beta = 1.183741e-02					beta = 1.175817e-02 					(-0.669389%)
+Q = 5.281276e+03					Q = 8.629235e+03 					(63.392987%)
+Fp = 1.718943e-01					Fp = 3.479485e-01 					(102.420038%)
+DN = 9.397523e+08					DN = 2.214960e+08 					(324.275125%)
+CavityLoss = 9.546695e-08				CavityLoss = 4.585387e-08 				(108.198220%)
+Distance = 9.381136e-01					Distance = 9.249924e+00 				(-89.858148%)
+Reflec_min= 6.076570e-01				Reflec_min = 8.712330e-02 				(597.467864%)
 
 
 
-dado: C:\Users\danic\OneDrive - ufmg.br\Desktop\Nanocomp_DifferentialEvolution\Dados\2020_03_03-19h50min.mat
+dado: C:\Users\gui_s\Documents\Linux-W\Git\Microcavity-Optimization\Dados\2020_03_28-12h27min.mat
 RESULTADOS BASE						NOVOS RESULTADOS					PERCENTUAL DE MELHORA
-beta = 1.183741e-02					beta = 1.177706e-02 					(-0.509852%)
-Q = 5.281276e+03					Q = 6.547179e+03 					(23.969651%)
-Fp = 1.718943e-01					Fp = 2.323685e-01 					(35.181065%)
-DN = 9.397523e+08					DN = 3.894625e+08 					(141.294690%)
-CavityLoss = 9.546695e-08				CavityLoss = 5.375777e-08 				(77.587265%)
-Distance = 9.381136e-01					Distance = 2.224519e+00 				(-57.828473%)
-Reflec_min= 6.076570e-01				Reflec_min = 6.257032e-01 				(-2.884154%)
+beta = 1.183741e-02					beta = 1.177236e-02 					(-0.549502%)
+Q = 5.281276e+03					Q = 1.016610e+04 					(92.493167%)
+Fp = 1.718943e-01					Fp = 3.523609e-01 					(104.986937%)
+DN = 9.397523e+08					DN = 2.491641e+08 					(277.161976%)
+CavityLoss = 9.546695e-08				CavityLoss = 5.217285e-08 				(82.982062%)
+Distance = 9.381136e-01					Distance = 6.425359e+00 				(-85.399826%)
+Reflec_min= 6.076570e-01				Reflec_min = 2.952342e-01 				(105.822016%)
