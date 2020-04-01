@@ -5,9 +5,9 @@ function inicializacoes()
     
     F = 2;
     chance_mutacao = 0.25;
-    n_individuos = 30;
+    n_individuos = 50;
     erro_parada = 0.01;
     geracoes_parada = 5;
-    max_geracoes = 25;
+    max_geracoes = 30;
     
 end
