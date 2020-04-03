@@ -33,7 +33,7 @@ function gerarPopulacaoInicial(obj)
                 % acrescentado rand() que e uma funcao que varia de 0 a 1,
                 % e da forma que fizemos, varia de lims a limi
                 obj.populacao(i).parametros(j) = ...
-                ((lims-limi)*rand()+limi);
+                round(((lims-limi)*rand()+limi),2); %2 digitos decimais apenas
             end
             
         end

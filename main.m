@@ -1,17 +1,23 @@
 clear all;
 clc;
 close all;
+
 global range delta maior METODO print plota saveErrors countGen repeticoes;
 global erro countErrors countSuccesses PESO geracao numIndiv;
 global tempoExec F n_individuos chance_mutacao erro_parada geracoes_parada max_geracoes parametrosOtimizacao;
+global iter numIter numRep dataInicio; 
 repeticoes = 0;
 iter = 0;
+numIter = 10;
+numRep = 15;
+inicio = clock;
+dataInicio = sprintf('%.2d/%.2d/%.2d-%.2dh%.2dmin',inicio(3),inicio(2),inicio(1),inicio(4),inicio(5));
 
-while(iter<10)
-    while(repeticoes<15)
+while(iter<numIter)
+    while(repeticoes<numRep)
         clc;
         close all;
-        delta = 0.0001; %20%
+        delta = 0.25; %25%
         range = 20;
         maior = [0 0 0 0 0 0 0];
         METODO = 1; %metodo 1: soma todos os objetivos, método 2: pega o pior objetivo e otimiza ele
@@ -26,7 +32,7 @@ while(iter<10)
         countSuccesses = 0;
         countGen = 0;
         saveErrors = 0;
-        PESO = [5 25 1 5 6 6+3*iter 25]; %favor escolher valores maiores ou iguais a 1. 
+        PESO = [5 20+iter 1 5 6 15 25]; %favor escolher valores maiores ou iguais a 1. 
         %Quanto maior o peso, maior a relevância do objetivo caso metodo 1 e o contrario caso metodo 2
 
         inicializacoes();
@@ -34,11 +40,11 @@ while(iter<10)
             geracoes_parada, max_geracoes);
 
         %%%%%%%%%%VALORES DE RESTRICAO DE GERACAO%%%%%%%%%%%%%
-        a.adicionarParametro('c01', 'real', [0 0.1]);
-        a.adicionarParametro('c02', 'real', [0.7 1]);
-        a.adicionarParametro('c03', 'real', [0 0.3]);
-        a.adicionarParametro('ncs', 'inteiro', [16 25]);
-        a.adicionarParametro('nci', 'inteiro', [16 25]);
+        a.adicionarParametro('c01', 'real', [0 1]);
+        a.adicionarParametro('c02', 'real', [0 1]);
+        a.adicionarParametro('c03', 'real', [0 1]);
+        a.adicionarParametro('ncs', 'inteiro', [10 25]);
+        a.adicionarParametro('nci', 'inteiro', [10 25]);
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
         a.adicionarRestricao(@funcao_restricao_area, 'c01', 'c02', 'c03', 'ncs', 'nci');
@@ -66,8 +72,8 @@ while(iter<10)
 
         figure()
         plot(1:a.rodadas, a.maiorFITGer(1:a.rodadas));
-        title('Evolucao do melhor fitness ao longo das gerações');
-        xlabel('Geração');
+        title('Evolucao do melhor fitness ao longo das geracoes');
+        xlabel('Geracao');
         ylabel('Fitness')
 
 
@@ -85,7 +91,7 @@ end
         global countGen;
         countGen = countGen + 1;
         global delta; %delta da diferença entre c01 e c02, tem que ser maior que ele a diferença
-        if((vars(1) >= 0 && vars(1) <= 1) && (vars(2) >= 0 && vars(2) <= 1) && (abs(vars(2)-vars(1)) >= delta) && (abs(vars(3)-vars(1)) >= delta) && (abs(vars(3)-vars(2)) >= delta) && (vars(3) >= 0 && vars(3) <= 1) && (vars(4) >= 1 && vars(1) <= 25) && (vars(5) >= 1 && vars(5) <= 25))
+        if((vars(1) >= 0 && vars(1) <= 1) && (vars(2) >= 0 && vars(2) <= 1) && (abs(vars(2)-vars(1)) >= delta) && (vars(3) >= 0 && vars(3) <= 1) && (vars(4) >= 1 && vars(1) <= 25) && (vars(5) >= 1 && vars(5) <= 25))
             y = true;
         else
             y = false;
@@ -94,11 +100,23 @@ end
 
     function y = funcao_objetivo(vars)
         global erro repeticoes saveErrors countErrors countSuccesses PESO print METODO maior geracao numIndiv;
-        global range countGen delta parametrosOtimizacao tempoExec;
+        global range countGen delta parametrosOtimizacao tempoExec; 
+        global iter numIter numRep n_individuos max_geracoes dataInicio deltaTempo tempoPrevisto;
         norm_z = zeros(1,7);
-
         z = Reflectance_adapted(vars);
-
+        %%%%%%%%ANALISE DE TEMPO%%%%%%%%%%%%
+        if(numIndiv==1&&iter==0&&geracao==1&&repeticoes==0)
+            deltaTempo = 0;
+            tic();
+        elseif(numIndiv==2&&iter==0&&geracao==1&&repeticoes==0)
+            deltaTempo = toc();
+            aux = (deltaTempo/60)*n_individuos*max_geracoes*numRep*numIter;
+            dias = floor(aux/(60*24));
+            horas = floor(aux/60-24*dias);
+            minutos = ceil(aux-24*60*dias-60*horas);
+            tempoPrevisto = sprintf("%.2d dias, %.2d horas e %.0f minutos",dias,horas,minutos);
+        end
+        
         %%%%%%%%%%NORMALIZACAO%%%%%%%%%%
         %Deve ficar de 0 a 1, quanto maior, melhor
         %Valores base de normalização de 3 vezes o valor encontrado no codigo enviado pelo
@@ -134,7 +152,7 @@ end
         y = [valor erro];
 
 
-        if(erro)
+        if(erro)%||z(2)<4000||z(7)>0.7139||z(6)>0.1)
             %CASO INDIVIDUO GERADO SEJA INVALIDO, erro vira 1
             erro = 0;
             if(geracao>1)    
@@ -158,16 +176,18 @@ end
         if(print&&countSuccesses>50) %Se tiver menos que 50 sucessos, resultado é ruim
             date = clock;
             matFileName = sprintf('./Dados/%.2d_%.2d_%.2d-%.2dh%.2dmin.mat',date(1),date(2),date(3),date(4),date(5));
-            save(matFileName,'vars','z','norm_z','PESO','countSuccesses','countErrors','METODO','maior','range','repeticoes' ,'parametrosOtimizacao','delta','tempoExec')
+            save(matFileName,'vars','z','norm_z','PESO','countSuccesses','countErrors','METODO','maior','range','repeticoes' ,'parametrosOtimizacao','delta','tempoExec','numIter','iter','numRep','dataInicio')
         end
         
+        
+        
         %update de informação dos valores de interesse
-        fprintf('\n..............................................................................');
-        fprintf('\nRESULTADOS PARCIAIS:\nRepeticao %d\t\t\t\tGeracao %d\t\t\tIndividuo %d',repeticoes,geracao,numIndiv);
-        fprintf('\nAcertos: %d\t\t\t\tErros: %d', countSuccesses, countErrors);
+        fprintf('\n....................................................................................................');
+        fprintf('\nRESULTADOS PARCIAIS:\nIter:%d/%d\t\t\tRepeticao %d/%d\t\t\tGeracao %d/%d\t\t\tIndividuo %d/%d',iter+1,numIter,repeticoes+1,numRep,geracao,max_geracoes,numIndiv,n_individuos);
+        fprintf('\nAcertos: %d\t\t\tErros: %d\t\t\t', countSuccesses, countErrors);
+        fprintf('\nCome�ou: %s\t\t\tTempo Total Previsto: %s', dataInicio, tempoPrevisto);
         %fprintf('\t\t\tGerados: %d', countGen);
         %fprintf(' (delta = %.1f%%).', delta*100);
-        fprintf('\n');
         norm_z = norm_z
         maior = maior
     end

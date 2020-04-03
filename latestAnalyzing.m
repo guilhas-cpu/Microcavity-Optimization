@@ -8,7 +8,7 @@ ultimos=0;
 
 for i=1:tamanho(1)
    dado = string(ds.Files(i)); 
-   if(i<tamanho(1)-4)
+   if(i<tamanho(1)-20)
        bad = 1;
    else
        ultimos = ultimos+1;

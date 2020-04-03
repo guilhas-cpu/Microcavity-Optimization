@@ -3,7 +3,7 @@ RANKING MELHORES RESULTADOS
 
 
 
-dado: C:\Users\gui_s\Documents\Linux-W\Git\Microcavity-Optimization\Dados\2020_02_20-01h19min.mat
+dado: C:\Users\danic\OneDrive - ufmg.br\Desktop\Nanocomp_DifferentialEvolution\Dados\2020_02_20-01h19min.mat
 RESULTADOS BASE						NOVOS RESULTADOS					PERCENTUAL DE MELHORA
 beta = 1.183741e-02					beta = 1.181668e-02 					(-0.175135%)
 Q = 5.281276e+03					Q = 6.168072e+03 					(16.791325%)
@@ -15,7 +15,7 @@ Reflec_min= 6.076570e-01				Reflec_min = 6.453291e-01 				(-5.837652%)
 
 
 
-dado: C:\Users\gui_s\Documents\Linux-W\Git\Microcavity-Optimization\Dados\2020_02_25-22h57min.mat
+dado: C:\Users\danic\OneDrive - ufmg.br\Desktop\Nanocomp_DifferentialEvolution\Dados\2020_02_25-22h57min.mat
 RESULTADOS BASE						NOVOS RESULTADOS					PERCENTUAL DE MELHORA
 beta = 1.183741e-02					beta = 1.180277e-02 					(-0.292633%)
 Q = 5.281276e+03					Q = 6.307878e+03 					(19.438519%)
@@ -27,7 +27,7 @@ Reflec_min= 6.076570e-01				Reflec_min = 4.702472e-01 				(29.220767%)
 
 
 
-dado: C:\Users\gui_s\Documents\Linux-W\Git\Microcavity-Optimization\Dados\2020_02_26-11h51min.mat
+dado: C:\Users\danic\OneDrive - ufmg.br\Desktop\Nanocomp_DifferentialEvolution\Dados\2020_02_26-11h51min.mat
 RESULTADOS BASE						NOVOS RESULTADOS					PERCENTUAL DE MELHORA
 beta = 1.183741e-02					beta = 1.181340e-02 					(-0.202834%)
 Q = 5.281276e+03					Q = 6.307628e+03 					(19.433785%)
@@ -39,7 +39,7 @@ Reflec_min= 6.076570e-01				Reflec_min = 6.590853e-01 				(-7.802982%)
 
 
 
-dado: C:\Users\gui_s\Documents\Linux-W\Git\Microcavity-Optimization\Dados\2020_02_27-19h41min.mat
+dado: C:\Users\danic\OneDrive - ufmg.br\Desktop\Nanocomp_DifferentialEvolution\Dados\2020_02_27-19h41min.mat
 RESULTADOS BASE						NOVOS RESULTADOS					PERCENTUAL DE MELHORA
 beta = 1.183741e-02					beta = 1.180597e-02 					(-0.265569%)
 Q = 5.281276e+03					Q = 6.168225e+03 					(16.794218%)
@@ -51,7 +51,7 @@ Reflec_min= 6.076570e-01				Reflec_min = 5.096831e-01 				(19.222517%)
 
 
 
-dado: C:\Users\gui_s\Documents\Linux-W\Git\Microcavity-Optimization\Dados\2020_03_05-11h33min.mat
+dado: C:\Users\danic\OneDrive - ufmg.br\Desktop\Nanocomp_DifferentialEvolution\Dados\2020_03_05-11h33min.mat
 RESULTADOS BASE						NOVOS RESULTADOS					PERCENTUAL DE MELHORA
 beta = 1.183741e-02					beta = 1.179077e-02 					(-0.393994%)
 Q = 5.281276e+03					Q = 6.531238e+03 					(23.667807%)
@@ -63,7 +63,7 @@ Reflec_min= 6.076570e-01				Reflec_min = 6.366013e-01 				(-4.546686%)
 
 
 
-dado: C:\Users\gui_s\Documents\Linux-W\Git\Microcavity-Optimization\Dados\2020_03_05-22h25min.mat
+dado: C:\Users\danic\OneDrive - ufmg.br\Desktop\Nanocomp_DifferentialEvolution\Dados\2020_03_05-22h25min.mat
 RESULTADOS BASE						NOVOS RESULTADOS					PERCENTUAL DE MELHORA
 beta = 1.183741e-02					beta = 1.180702e-02 					(-0.256743%)
 Q = 5.281276e+03					Q = 6.531062e+03 					(23.664466%)
@@ -75,7 +75,7 @@ Reflec_min= 6.076570e-01				Reflec_min = 5.584311e-01 				(8.815031%)
 
 
 
-dado: C:\Users\gui_s\Documents\Linux-W\Git\Microcavity-Optimization\Dados\2020_03_06-03h46min.mat
+dado: C:\Users\danic\OneDrive - ufmg.br\Desktop\Nanocomp_DifferentialEvolution\Dados\2020_03_06-03h46min.mat
 RESULTADOS BASE						NOVOS RESULTADOS					PERCENTUAL DE MELHORA
 beta = 1.183741e-02					beta = 1.180194e-02 					(-0.299673%)
 Q = 5.281276e+03					Q = 6.939128e+03 					(31.391128%)
@@ -87,7 +87,7 @@ Reflec_min= 6.076570e-01				Reflec_min = 6.392529e-01 				(-4.942636%)
 
 
 
-dado: C:\Users\gui_s\Documents\Linux-W\Git\Microcavity-Optimization\Dados\2020_03_06-19h30min.mat
+dado: C:\Users\danic\OneDrive - ufmg.br\Desktop\Nanocomp_DifferentialEvolution\Dados\2020_03_06-19h30min.mat
 RESULTADOS BASE						NOVOS RESULTADOS					PERCENTUAL DE MELHORA
 beta = 1.183741e-02					beta = 1.182728e-02 					(-0.085596%)
 Q = 5.281276e+03					Q = 6.531003e+03 					(23.663352%)
@@ -99,7 +99,7 @@ Reflec_min= 6.076570e-01				Reflec_min = 5.002344e-01 				(21.474447%)
 
 
 
-dado: C:\Users\gui_s\Documents\Linux-W\Git\Microcavity-Optimization\Dados\2020_03_06-23h29min.mat
+dado: C:\Users\danic\OneDrive - ufmg.br\Desktop\Nanocomp_DifferentialEvolution\Dados\2020_03_06-23h29min.mat
 RESULTADOS BASE						NOVOS RESULTADOS					PERCENTUAL DE MELHORA
 beta = 1.183741e-02					beta = 1.180380e-02 					(-0.283937%)
 Q = 5.281276e+03					Q = 6.530238e+03 					(23.648873%)
@@ -108,3 +108,27 @@ DN = 9.397523e+08					DN = 4.726648e+08 					(98.820043%)
 CavityLoss = 9.546695e-08				CavityLoss = 5.977035e-08 				(59.722918%)
 Distance = 9.381136e-01					Distance = 7.994199e-02 				(1073.492953%)
 Reflec_min= 6.076570e-01				Reflec_min = 6.308197e-01 				(-3.671836%)
+
+
+
+dado: C:\Users\danic\OneDrive - ufmg.br\Desktop\Nanocomp_DifferentialEvolution\Dados\2020_04_01-13h47min.mat
+RESULTADOS BASE						NOVOS RESULTADOS					PERCENTUAL DE MELHORA
+beta = 1.183741e-02					beta = 1.179175e-02 					(-0.385750%)
+Q = 5.281276e+03					Q = 6.530415e+03 					(23.652214%)
+Fp = 1.718943e-01					Fp = 2.177881e-01 					(26.698854%)
+DN = 9.397523e+08					DN = 5.119143e+08 					(83.576082%)
+CavityLoss = 9.546695e-08				CavityLoss = 6.614368e-08 				(44.332695%)
+Distance = 9.381136e-01					Distance = 5.593719e-02 				(1577.083963%)
+Reflec_min= 6.076570e-01				Reflec_min = 5.010660e-01 				(21.272849%)
+
+
+
+dado: C:\Users\danic\OneDrive - ufmg.br\Desktop\Nanocomp_DifferentialEvolution\Dados\2020_04_02-15h44min.mat
+RESULTADOS BASE						NOVOS RESULTADOS					PERCENTUAL DE MELHORA
+beta = 1.183741e-02					beta = 1.180009e-02 					(-0.315274%)
+Q = 5.281276e+03					Q = 6.531532e+03 					(23.673377%)
+Fp = 1.718943e-01					Fp = 2.150141e-01 					(25.085085%)
+DN = 9.397523e+08					DN = 6.954705e+08 					(35.124687%)
+CavityLoss = 9.546695e-08				CavityLoss = 8.865340e-08 				(7.685600%)
+Distance = 9.381136e-01					Distance = 9.609322e-02 				(876.253697%)
+Reflec_min= 6.076570e-01				Reflec_min = 4.578587e-01 				(32.717150%)

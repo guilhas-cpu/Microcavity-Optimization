@@ -10,7 +10,7 @@ plota = 0;
 range = 20;
 erro = 0;
 
-ds = datastore("./Erros",'FileExtensions',{'.mat'},'Type','tabulartext');
+ds = datastore("./Erros",'FileExtensions',{'.mat'},'Type','tabulartext','TextscanFormats',{'%f','%f'});
 tamanho = size(ds.Files);
 
 

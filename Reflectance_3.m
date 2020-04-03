@@ -36,13 +36,13 @@ lambdaR = lambdaR1 + 4.8825E-2*V - 1.7137E-2*V^2 %Comprimento de onda ressonante
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 disp('Refractive index for ressonant wavelength:');
 disp('1st DBR layer:');
-n1R = Dispersion(c1,lambdaR,T) %Dispersao da primeira camada
+n1R = Dispersion_2(c1,lambdaR,T) %Dispersao da primeira camada
 disp('2nd DBR layer:');
-n2R = Dispersion(c2,lambdaR,T) %Dispersao da segunda camada
+n2R = Dispersion_2(c2,lambdaR,T) %Dispersao da segunda camada
 disp('Cavity and barreirs:');
-n3R = Dispersion(c3,lambdaR,T) %Cavity
+n3R = Dispersion_2(c3,lambdaR,T) %Cavity
 disp('Caplayer and Substrate:');
-n4R = Dispersion(c4,lambdaR,T) %Substrate, QW, Caplayer
+n4R = Dispersion_2(c4,lambdaR,T) %Substrate, QW, Caplayer
 disp('QW:');
 [nqwR lambInGaAs EgInGaAs EgGaAs] = InGaAsDispersion(cqw,lambdaR,T);
 nqwR % In mole fraction in the cap layer, substrate and QWs (0 - 1)
@@ -64,10 +64,10 @@ lambda_3 = linspace(lambdaR + 30, 1100, 500); %Spectrum
 lambda = [lambda_1 lambda_2 lambda_3];
 
 for b = 1 : length(lambda)
-   n_1(b) = Dispersion(c1,lambda(b),T); %Dispersao da primeira camada 
-   n_2(b) = Dispersion(c2,lambda(b),T); %Dispersao da segunda camada
-   n_3(b) = Dispersion(c3,lambda(b),T); %Dispersao da cavidade 
-   n_4(b) = Dispersion(c4,lambda(b),T); %Dispersao do substrato
+   n_1(b) = Dispersion_2(c1,lambda(b),T); %Dispersao da primeira camada 
+   n_2(b) = Dispersion_2(c2,lambda(b),T); %Dispersao da segunda camada
+   n_3(b) = Dispersion_2(c3,lambda(b),T); %Dispersao da cavidade 
+   n_4(b) = Dispersion_2(c4,lambda(b),T); %Dispersao do substrato
    [n_qw(b) lambInGaAs EgInGaAs EgGaAs] = InGaAsDispersion(cqw,lambda(b),T); %QW Dispersion
 end
 
@@ -277,16 +277,16 @@ for b=1:length(lambda) %Scanning the spectra
  B = m(1,2); 
  C = m(2,1); 
  D = m(2,2);
- ns = Dispersion(c4,lambda(b),T);
+ ns = Dispersion_2(c4,lambda(b),T);
  p0 = n0*cos(teta0)*cos(phi) + (n0/cos(teta0))*sin(phi);
 
  if xT(length(xT)) == x1 || xT(length(xT)-1)%Last 2nd DBR layer
-    na = Dispersion(c1,lambda(b),T);
+    na = Dispersion_2(c1,lambda(b),T);
     teta_s = asin((na/ns)*sin(teta));
  end
  
  if xT(length(xT)) == x2 || xT(length(xT))%Last 2nd DBR layer
-    na = Dispersion(c2,lambda(b),T);
+    na = Dispersion_2(c2,lambda(b),T);
     teta_s = asin((na/ns)*sin(teta));
  end
  

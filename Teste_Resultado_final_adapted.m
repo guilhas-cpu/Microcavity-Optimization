@@ -8,8 +8,6 @@ function fim = Teste_Resultado_final_adapted(dado,name)
     plota = 0;
     range = 30; %valor default
     iter = 0;
-    maior = zeros(1,7);
-    METODO = 1; %valor default
     load(dado);
 
     result = Reflectance_adapted(vars); %registra os resultados dos objetivos

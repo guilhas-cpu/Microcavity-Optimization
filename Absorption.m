@@ -3,7 +3,7 @@ function [a_AlGaAs lambGap_AlGaAs] = Absorption(c,lambda,T) % Absorption(Al mole
 %Results: [Absorption coefficient[m-1] Gap wavelength[nm]
  
 Kb = 1.380648e-23; %Boltzmann Constant [J/K]
-n = Dispersion(c,lambda,T);
+n = Dispersion_2(c,lambda,T);
  
 lambda = (1e-9)*lambda; %[m]
  
@@ -29,7 +29,7 @@ lambda = (1e-9)*lambda; %[m]
                 zAlGaAs= sqrt(ex_AlGaAs/((1.989e-25/lambda) - eg_AlGaAs));
                 a_AlGaAs = (((8*pi^2*Dieletrica)/((R_Bohr)^2*n*lambda))*(1/(1 - exp(-2*pi*zAlGaAs))))*(A*(1/lambda)^2 + B*(1/lambda) + C);
             else % Energia do foton < Energia do Gap
-                n_Gap = Dispersion(c,(lambGap_AlGaAs)*1e9,T);
+                n_Gap = Dispersion_2(c,(lambGap_AlGaAs)*1e9,T);
                 D = ((8*pi^2*Dieletrica)/((R_Bohr)^2*n_Gap*lambGap_AlGaAs))*(A*(1/lambGap_AlGaAs)^2 + B*(1/lambGap_AlGaAs) + C);
                 a_AlGaAs = D*exp(E*(((1.989e-25/lambda) - eg_AlGaAs)/(1.989e-25/lambda))*tanh((1.989e-25/lambda)/(2*Kb*300)));
             end
@@ -55,7 +55,7 @@ lambda = (1e-9)*lambda; %[m]
             zAlGaAs = pi*sqrt((ex_AlGaAs)/((1.989e-25/lambda) - eg_AlGaAs));
             a_AlGaAs = ((2*beta)^2)*((8*pi^2*Dieletrica)/(3*(R_Bohr)^4*n*lambda))*((1 + (zAlGaAs^(-2)))/(1 - exp(-2*pi*zAlGaAs)));%*(A_k1*(1/lambda(b))^2 + B_k1*(1/lambda(b)) + C_k1);
         else
-            n_Gap = Dispersion(c,(lambGap_AlGaAs)*1e9,T);
+            n_Gap = Dispersion_2(c,(lambGap_AlGaAs)*1e9,T);
             D = (2*beta)^2*((8*pi^2*Dieletrica)/(3*(R_Bohr)^4*n_Gap*lambGap_AlGaAs))*(A*(1/lambGap_AlGaAs)^2 + B*(1/lambGap_AlGaAs) + C);
             a_AlGaAs = D*exp(E*(((1.989e-25/lambda) - eg_AlGaAs)/(1.989e-25/lambda))*tanh((1.989e-25/lambda)/(2*Kb*300)));
         end
