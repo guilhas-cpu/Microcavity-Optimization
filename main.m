@@ -6,7 +6,6 @@ global range delta maior METODO print plota saveErrors countGen repeticoes;
 global erro countErrors countSuccesses PESO geracao numIndiv;
 global tempoExec F n_individuos chance_mutacao erro_parada geracoes_parada max_geracoes parametrosOtimizacao;
 global iter numIter numRep dataInicio; 
-repeticoes = 0;
 iter = 0;
 numIter = 10;
 numRep = 15;
@@ -14,6 +13,7 @@ inicio = clock;
 dataInicio = sprintf('%.2d/%.2d/%.2d-%.2dh%.2dmin',inicio(3),inicio(2),inicio(1),inicio(4),inicio(5));
 
 while(iter<numIter)
+    repeticoes = 0;
     while(repeticoes<numRep)
         clc;
         close all;
@@ -31,7 +31,7 @@ while(iter<numIter)
         countErrors = 0;
         countSuccesses = 0;
         countGen = 0;
-        saveErrors = 0;
+        saveErrors = 1;
         PESO = [5 20+iter 1 5 6 15 25]; %favor escolher valores maiores ou iguais a 1. 
         %Quanto maior o peso, maior a relevância do objetivo caso metodo 1 e o contrario caso metodo 2
 
@@ -79,7 +79,7 @@ while(iter<numIter)
 
         repeticoes = repeticoes +1;
     end
-    iter = iter+1;
+    iter = iter+1
 end
 
  function y = funcao_fitness(vars) 
@@ -105,10 +105,10 @@ end
         norm_z = zeros(1,7);
         z = Reflectance_adapted(vars);
         %%%%%%%%ANALISE DE TEMPO%%%%%%%%%%%%
-        if(numIndiv==1&&iter==0&&geracao==1&&repeticoes==0)
+        if(numIndiv==1&&geracao>1)
             deltaTempo = 0;
             tic();
-        elseif(numIndiv==2&&iter==0&&geracao==1&&repeticoes==0)
+        elseif(numIndiv==2&&geracao>1)
             deltaTempo = toc();
             aux = (deltaTempo/60)*n_individuos*max_geracoes*numRep*numIter;
             dias = floor(aux/(60*24));
@@ -181,7 +181,7 @@ end
         
         
         
-        %update de informação dos valores de interesse
+        %update de informacao dos valores de interesse
         fprintf('\n....................................................................................................');
         fprintf('\nRESULTADOS PARCIAIS:\nIter:%d/%d\t\t\tRepeticao %d/%d\t\t\tGeracao %d/%d\t\t\tIndividuo %d/%d',iter+1,numIter,repeticoes+1,numRep,geracao,max_geracoes,numIndiv,n_individuos);
         fprintf('\nAcertos: %d\t\t\tErros: %d\t\t\t', countSuccesses, countErrors);

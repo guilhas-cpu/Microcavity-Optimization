@@ -17,7 +17,7 @@ tamanho = size(ds.Files);
 for i=1:tamanho(1)
    dado = string(ds.Files(i)); 
    load(dado)
-   dado = dado
+   dado = dado;
    vars = vars
 end
-%z = Reflectance_adapted(vars)
+%z = Reflectance_adapted_v2(vars)

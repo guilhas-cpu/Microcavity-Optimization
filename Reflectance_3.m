@@ -7,14 +7,14 @@ c = 299792458; % light speed [m/s]
 Ta = 300; %Room temperature
 %Initial parameters
 %cav = 0; % Cavity architecture - 0 for lower refractive index and 1 for a high refractive index
-c1 = 0; %x=1 - Al mole fraction in first layer (0 - 1) - in air contact!
-c2 = 0.9; %x=0.2 - Al mole fraction in second layer (0 - 1)
-c3 = 0; %x=0.7 - Al mole fraction in the cavity (0 - 1)
+c1 = 0.0527; %x=1 - Al mole fraction in first layer (0 - 1) - in air contact!
+c2 = 0.9157; %x=0.2 - Al mole fraction in second layer (0 - 1)
+c3 = 0.0773; %x=0.7 - Al mole fraction in the cavity (0 - 1)
 c4 = 0; % x=0 - Al mole fraction in the cap layer, substrate (0 - 1)
 cqw = 0.13; %In mole fraction in InGaAs for QW refractive index; 0 is the GaAs.
 n0 = 1.45; %Refractive index of the external medium
-ncs = 20; %Number of pair of layers for the upper DBR 
-nci = 20; %Number of pair of layers for the bottom DBR 
+ncs = 22; %Number of pair of layers for the upper DBR 
+nci = 22; %Number of pair of layers for the bottom DBR 
 lambdaR1 = 898; %Ressonant wavelength at 300K [nm]
 s = 1; %Cavity order (multiple of lambda/2)
 N=3; % QWs number
@@ -88,7 +88,7 @@ disp('Cavity absorption coefficient [m-1] and gap wavelength (nm) at defined tem
 %Building the sample
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-[xT xqwT xbT xcavHT xcavT Lc] = Sample_2(s,ncs,nci,N,xqw,xb,c1,c2,c3,c4,cqw,lambdaR,T,teta0,shift);
+[xT xqwT xbT xcavHT xcavT Lc] = Sample_3(s,ncs,nci,N,xqw,xb,c1,c2,c3,c4,cqw,lambdaR,T,teta0,shift);
  
 ac=0;
 

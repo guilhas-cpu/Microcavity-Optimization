@@ -44,10 +44,10 @@ function z = Reflectance_adapted(vars)
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     %Refractive index for the new resonance (due to applied bias)
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    n1R = Dispersion_2(c1,lambdaR,T); %Dispersao da primeira camada
-    n2R = Dispersion_2(c2,lambdaR,T); %Dispersao da segunda camada
-    n3R = Dispersion_2(c3,lambdaR,T); %Cavity
-    n4R = Dispersion_2(c4,lambdaR,T); %Substrate, QW, Caplayer
+    n1R = Dispersion(c1,lambdaR,T); %Dispersao da primeira camada
+    n2R = Dispersion(c2,lambdaR,T); %Dispersao da segunda camada
+    n3R = Dispersion(c3,lambdaR,T); %Cavity
+    n4R = Dispersion(c4,lambdaR,T); %Substrate, QW, Caplayer
     [nqwR lambInGaAs EgInGaAs EgGaAs] = InGaAsDispersion(cqw,lambdaR,T);
     if(print)
         disp('Refractive index for ressonant wavelength:');
@@ -73,16 +73,16 @@ function z = Reflectance_adapted(vars)
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     %Dispersion curves
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    lambda_1 = linspace(700, lambdaR - 30, 500); %Spectrum
+    lambda_1 = linspace(700, lambdaR - range-1, 1000); %Spectrum
     lambda_2 = linspace(lambdaR - range, lambdaR + range, 5000); %Spectrum
-    lambda_3 = linspace(lambdaR + 30, 1100, 500); %Spectrum
+    lambda_3 = linspace(lambdaR + range+1, 1100, 1000); %Spectrum
     lambda = [lambda_1 lambda_2 lambda_3];
 
     for b = 1 : length(lambda)
-       n_1(b) = Dispersion_2(c1,lambda(b),T); %Dispersao da primeira camada 
-       n_2(b) = Dispersion_2(c2,lambda(b),T); %Dispersao da segunda camada
-       n_3(b) = Dispersion_2(c3,lambda(b),T); %Dispersao da cavidade 
-       n_4(b) = Dispersion_2(c4,lambda(b),T); %Dispersao do substrato
+       n_1(b) = Dispersion(c1,lambda(b),T); %Dispersao da primeira camada 
+       n_2(b) = Dispersion(c2,lambda(b),T); %Dispersao da segunda camada
+       n_3(b) = Dispersion(c3,lambda(b),T); %Dispersao da cavidade 
+       n_4(b) = Dispersion(c4,lambda(b),T); %Dispersao do substrato
        [n_qw(b) lambInGaAs EgInGaAs EgGaAs] = InGaAsDispersion(cqw,lambda(b),T); %QW Dispersion
     end
 
@@ -110,7 +110,7 @@ function z = Reflectance_adapted(vars)
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     %Building the sample
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    [xT xqwT xbT xcavHT xcavT Lc] = Sample_2(s,ncs,nci,N,xqw,xb,c1,c2,c3,c4,cqw,lambdaR,T,teta0,shift);
+    [xT xqwT xbT xcavHT xcavT Lc] = Sample_3(s,ncs,nci,N,xqw,xb,c1,c2,c3,c4,cqw,lambdaR,T,teta0,shift);
     ac=0;
 
     
@@ -312,16 +312,16 @@ function z = Reflectance_adapted(vars)
      B = m(1,2); 
      C = m(2,1); 
      D = m(2,2);
-     ns = Dispersion_2(c4,lambda(b),T);
+     ns = Dispersion(c4,lambda(b),T);
      p0 = n0*cos(teta0)*cos(phi) + (n0/cos(teta0))*sin(phi);
 
      if xT(length(xT)) == x1 || xT(length(xT)-1)%Last 2nd DBR layer
-        na = Dispersion_2(c1,lambda(b),T);
+        na = Dispersion(c1,lambda(b),T);
         teta_s = asin((na/ns)*sin(teta));
      end
 
      if xT(length(xT)) == x2 || xT(length(xT))%Last 2nd DBR layer
-        na = Dispersion_2(c2,lambda(b),T);
+        na = Dispersion(c2,lambda(b),T);
         teta_s = asin((na/ns)*sin(teta));
      end
 
