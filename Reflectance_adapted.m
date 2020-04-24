@@ -25,7 +25,7 @@ function z = Reflectance_adapted(vars)
     xqw = 7.5; %QWs thickness [nm] at 300K (all will be equal)
     xb = 5; %Barreir thickness [nm] at 300K (all will be equal)
     V = 0; %Aplied bias (0 - 10V)
-    T = 10; %Sample temperature
+    T = 10; %Sample temperature 
     teta0 = 0*(pi/180); %Light incident angle [rad], in relation to normal of the sample
     phi = 0*(pi/180); %Polarization angle (0 = TE, pi/2 = TM) [rad]
     shift = 0; %Cavity shift [nm]

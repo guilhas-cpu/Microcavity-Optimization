@@ -7,21 +7,21 @@ c = 299792458; % light speed [m/s]
 Ta = 300; %Room temperature
 %Initial parameters
 %cav = 0; % Cavity architecture - 0 for lower refractive index and 1 for a high refractive index
-c1 = 0; %x=1 - Al mole fraction in first layer (0 - 1) - in air contact!
-c2 = 0.9; %x=0.2 - Al mole fraction in second layer (0 - 1)
-c3 = 0; %x=0.7 - Al mole fraction in the cavity (0 - 1)
+c1 = 0.03; %x=1 - Al mole fraction in first layer (0 - 1) - in air contact!
+c2 = 0.81; %x=0.2 - Al mole fraction in second layer (0 - 1)
+c3 = 0.9; %x=0.7 - Al mole fraction in the cavity (0 - 1)
 c4 = 0; % x=0 - Al mole fraction in the cap layer, substrate (0 - 1)
 cqw = 0.13; %In mole fraction in InGaAs for QW refractive index; 0 is the GaAs.
 n0 = 1; %Refractive index of the external medium
-ncs = 20; %Number of pair of layers for the upper DBR 
-nci = 20; %Number of pair of layers for the bottom DBR 
+ncs = 24; %Number of pair of layers for the upper DBR 
+nci = 25; %Number of pair of layers for the bottom DBR 
 lambdaR1 = 898; %Ressonant wavelength at 300K [nm]
 s = 1; %Cavity order (multiple of lambda/2)
 N=3; % QWs number
 xqw = 7.5; %QWs thickness [nm] at 300K (all will be equal)
 xb = 5; %Barreir thickness [nm] at 300K (all will be equal)
 V = 0; %Aplied bias (0 - 10V)
-T = 300; %Sample temperature
+T =10; %Sample temperature
 teta0 = 0*(pi/180); %Light incident angle [rad], in relation to normal of the sample
 phi = 0*(pi/180); %Polarization angle (0 = TE, pi/2 = TM) [rad]
 shift = 0; %Cavity shift [nm]
@@ -36,13 +36,13 @@ lambdaR = lambdaR1 + 4.8825E-2*V - 1.7137E-2*V^2 %Comprimento de onda ressonante
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 disp('Refractive index for ressonant wavelength:');
 disp('1st DBR layer:');
-n1R = Dispersion(c1,lambdaR,T) %Dispersao da primeira camada
+n1R = Dispersion_2(c1,lambdaR,T) %Dispersao da primeira camada
 disp('2nd DBR layer:');
-n2R = Dispersion(c2,lambdaR,T) %Dispersao da segunda camada
+n2R = Dispersion_2(c2,lambdaR,T) %Dispersao da segunda camada
 disp('Cavity and barreirs:');
-n3R = Dispersion(c3,lambdaR,T) %Cavity
+n3R = Dispersion_2(c3,lambdaR,T) %Cavity
 disp('Caplayer and Substrate:');
-n4R = Dispersion(c4,lambdaR,T) %Substrate, QW, Caplayer
+n4R = Dispersion_2(c4,lambdaR,T) %Substrate, QW, Caplayer
 disp('QW:');
 [nqwR lambInGaAs EgInGaAs EgGaAs] = InGaAsDispersion(cqw,lambdaR,T);
 nqwR % In mole fraction in the cap layer, substrate and QWs (0 - 1)
@@ -59,15 +59,15 @@ EgGaAs
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 lambda_1 = linspace(700, lambdaR - 50, 1000); %Spectrum
-lambda_2 = linspace(lambdaR - 49, lambdaR + 49, 3000); %Spectrum
+lambda_2 = linspace(lambdaR - 49, lambdaR + 49, 5000); %Spectrum
 lambda_3 = linspace(lambdaR + 50, 1100, 1000); %Spectrum
 lambda = [lambda_1 lambda_2 lambda_3];
 
 for b = 1 : length(lambda)
-   n_1(b) = Dispersion(c1,lambda(b),T); %1st layer dispersion
-   n_2(b) = Dispersion(c2,lambda(b),T); %2nd layer dispersion
-   n_3(b) = Dispersion(c3,lambda(b),T); %Cavity dispersion 
-   n_4(b) = Dispersion(c4,lambda(b),T); %Substrate dispersion
+   n_1(b) = Dispersion_2(c1,lambda(b),T); %1st layer dispersion
+   n_2(b) = Dispersion_2(c2,lambda(b),T); %2nd layer dispersion
+   n_3(b) = Dispersion_2(c3,lambda(b),T); %Cavity dispersion 
+   n_4(b) = Dispersion_2(c4,lambda(b),T); %Substrate dispersion
    [n_qw(b) lambInGaAs EgInGaAs EgGaAs] = InGaAsDispersion(cqw,lambda(b),T); %QW dispersion
 end
 
@@ -278,16 +278,16 @@ for b=1:length(lambda) %Scanning the spectra
  B = m(1,2); 
  C = m(2,1); 
  D = m(2,2);
- ns = Dispersion(c4,lambda(b),T);
+ ns = Dispersion_2(c4,lambda(b),T);
  p0 = n0*cos(teta0)*cos(phi) + (n0/cos(teta0))*sin(phi);
 
  if xT(length(xT)) == x1 || xT(length(xT)-1)%Last 2nd DBR layer
-    na = Dispersion(c1,lambda(b),T);
+    na = Dispersion_2(c1,lambda(b),T);
     teta_s = asin((na/ns)*sin(teta));
  end
  
  if xT(length(xT)) == x2 || xT(length(xT))%Last 2nd DBR layer
-    na = Dispersion(c2,lambda(b),T);
+    na = Dispersion_2(c2,lambda(b),T);
     teta_s = asin((na/ns)*sin(teta));
  end
  

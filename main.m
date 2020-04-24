@@ -7,7 +7,7 @@ global erro countErrors countSuccesses PESO geracao numIndiv;
 global tempoExec F n_individuos chance_mutacao erro_parada geracoes_parada max_geracoes parametrosOtimizacao;
 global iter numIter numRep dataInicio; 
 iter = 0;
-numIter = 10;
+numIter = 4;
 numRep = 15;
 inicio = clock;
 dataInicio = sprintf('%.2d/%.2d/%.2d-%.2dh%.2dmin',inicio(3),inicio(2),inicio(1),inicio(4),inicio(5));
@@ -31,8 +31,19 @@ while(iter<numIter)
         countErrors = 0;
         countSuccesses = 0;
         countGen = 0;
-        saveErrors = 1;
-        PESO = [5 20+iter 1 5 6 15 25]; %favor escolher valores maiores ou iguais a 1. 
+        saveErrors = 0;
+        
+       switch iter
+           case 0
+               PESO = [5 20 1 5 6 15 25]; %favor escolher valores maiores ou iguais a 1. 
+           case 1
+               PESO = [5 21 1 5 6 15 25]; %favor escolher valores maiores ou iguais a 1.     
+           case 2
+               PESO = [5 24 1 5 6 15 25]; %favor escolher valores maiores ou iguais a 1. 
+           case 3
+               PESO = [5 25 1 5 6 15 25]; %favor escolher valores maiores ou iguais a 1. 
+        end
+        
         %Quanto maior o peso, maior a relevância do objetivo caso metodo 1 e o contrario caso metodo 2
 
         inicializacoes();

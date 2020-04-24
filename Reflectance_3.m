@@ -7,14 +7,14 @@ c = 299792458; % light speed [m/s]
 Ta = 300; %Room temperature
 %Initial parameters
 %cav = 0; % Cavity architecture - 0 for lower refractive index and 1 for a high refractive index
-c1 = 0.0527; %x=1 - Al mole fraction in first layer (0 - 1) - in air contact!
-c2 = 0.9157; %x=0.2 - Al mole fraction in second layer (0 - 1)
-c3 = 0.0773; %x=0.7 - Al mole fraction in the cavity (0 - 1)
+c1 = 0.03; %x=1 - Al mole fraction in first layer (0 - 1) - in air contact!
+c2 = 0.76; %x=0.2 - Al mole fraction in second layer (0 - 1)
+c3 = 0.81; %x=0.7 - Al mole fraction in the cavity (0 - 1)
 c4 = 0; % x=0 - Al mole fraction in the cap layer, substrate (0 - 1)
 cqw = 0.13; %In mole fraction in InGaAs for QW refractive index; 0 is the GaAs.
 n0 = 1.45; %Refractive index of the external medium
-ncs = 22; %Number of pair of layers for the upper DBR 
-nci = 22; %Number of pair of layers for the bottom DBR 
+ncs = 23; %Number of pair of layers for the upper DBR 
+nci = 25; %Number of pair of layers for the bottom DBR 
 lambdaR1 = 898; %Ressonant wavelength at 300K [nm]
 s = 1; %Cavity order (multiple of lambda/2)
 N=3; % QWs number
@@ -58,9 +58,9 @@ EgGaAs
 %Dispersion curves
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-lambda_1 = linspace(700, lambdaR - 30, 500); %Spectrum
-lambda_2 = linspace(lambdaR - 30, lambdaR + 30, 5000); %Spectrum
-lambda_3 = linspace(lambdaR + 30, 1100, 500); %Spectrum
+lambda_1 = linspace(700, lambdaR - 30, 1000); %Spectrum
+lambda_2 = linspace(lambdaR - 29, lambdaR + 29, 5000); %Spectrum
+lambda_3 = linspace(lambdaR + 30, 1100, 1000); %Spectrum
 lambda = [lambda_1 lambda_2 lambda_3];
 
 for b = 1 : length(lambda)

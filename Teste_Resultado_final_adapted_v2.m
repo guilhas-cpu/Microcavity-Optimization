@@ -6,7 +6,7 @@ function fim = Teste_Resultado_final_adapted_v2(dado,name,original)
     global iter;
     print = 0;
     plota = 0;
-    range = 20; %valor default
+    range = 50; %valor default
     iter = 0;
     load(dado);
 

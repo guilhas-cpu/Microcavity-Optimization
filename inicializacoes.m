@@ -8,6 +8,6 @@ function inicializacoes()
     n_individuos = 25;
     erro_parada = 0.01;
     geracoes_parada = 5;
-    max_geracoes = 40;
+    max_geracoes = 80;
     
 end

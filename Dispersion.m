@@ -17,11 +17,11 @@ n = sqrt(A + ((B*(lambda^2))/((lambda^2) - C))); %Sellmeier Equation
 %%%%%%%%%%%%%%%%%%%%
 %Temperature correction
 %%%%%%%%%%%%%%%%%%%%
- beta = 1.43e-5; %Thermo-optic coefficient for GaAs by fitting
+%  beta = 1.43e-5; %Thermo-optic coefficient for GaAs by fitting
 
-if c == 0 %GaAs only
-    no = n/exp(beta*300); %Refractive index at T=0K
-    n = no*exp(beta*T); %Refractive index at defined temperature
-end
+% if c == 0 %GaAs only
+%     no = n/exp(beta*300); %Refractive index at T=0K
+%     n = no*exp(beta*T); %Refractive index at defined temperature
+% end
 
 end
