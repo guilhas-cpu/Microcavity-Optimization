@@ -5,10 +5,10 @@ close all;
 global range delta maior METODO print plota saveErrors countGen repeticoes;
 global erro countErrors countSuccesses PESO geracao numIndiv;
 global tempoExec F n_individuos chance_mutacao erro_parada geracoes_parada max_geracoes parametrosOtimizacao;
-global iter numIter numRep dataInicio; 
-iter = 0;
+global iter numIter numRep dataInicio dispersion; 
+iter = 1;
 numIter = 4;
-numRep = 15;
+numRep = 5;
 inicio = clock;
 dataInicio = sprintf('%.2d/%.2d/%.2d-%.2dh%.2dmin',inicio(3),inicio(2),inicio(1),inicio(4),inicio(5));
 
@@ -35,13 +35,17 @@ while(iter<numIter)
         
        switch iter
            case 0
-               PESO = [5 20 1 5 6 15 25]; %favor escolher valores maiores ou iguais a 1. 
+               PESO = [5 21 1 5 6 15 25]; %favor escolher valores maiores ou iguais a 1. 
+               dispersion = 1;
            case 1
-               PESO = [5 21 1 5 6 15 25]; %favor escolher valores maiores ou iguais a 1.     
+               PESO = [5 24 1 5 6 15 25]; %favor escolher valores maiores ou iguais a 1.  
+               dispersion = 1;
            case 2
-               PESO = [5 24 1 5 6 15 25]; %favor escolher valores maiores ou iguais a 1. 
+               PESO = [5 21 1 5 6 15 25]; %favor escolher valores maiores ou iguais a 1. 
+               dispersion = 2;
            case 3
-               PESO = [5 25 1 5 6 15 25]; %favor escolher valores maiores ou iguais a 1. 
+               PESO = [5 24 1 5 6 15 25]; %favor escolher valores maiores ou iguais a 1. 
+               dispersion = 2;
         end
         
         %Quanto maior o peso, maior a relevÃ¢ncia do objetivo caso metodo 1 e o contrario caso metodo 2
@@ -56,6 +60,7 @@ while(iter<numIter)
         a.adicionarParametro('c03', 'real', [0 1]);
         a.adicionarParametro('ncs', 'inteiro', [10 25]);
         a.adicionarParametro('nci', 'inteiro', [10 25]);
+        a.adicionarParametro('shift', 'real', [0 20]);
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
         a.adicionarRestricao(@funcao_restricao_area, 'c01', 'c02', 'c03', 'ncs', 'nci');
@@ -111,7 +116,7 @@ end
 
     function y = funcao_objetivo(vars)
         global erro repeticoes saveErrors countErrors countSuccesses PESO print METODO maior geracao numIndiv;
-        global range countGen delta parametrosOtimizacao tempoExec; 
+        global range countGen delta parametrosOtimizacao tempoExec dispersion; 
         global iter numIter numRep n_individuos max_geracoes dataInicio deltaTempo tempoPrevisto;
         norm_z = zeros(1,7);
         z = Reflectance_adapted(vars);
@@ -121,12 +126,24 @@ end
             tic();
         elseif(numIndiv==2&&geracao>1)
             deltaTempo = toc();
-            aux = (deltaTempo/60)*n_individuos*max_geracoes*numRep*numIter;
+            temposIterCompletas = (deltaTempo/60)*n_individuos*max_geracoes*numRep*(numIter-(iter+1));
+            temposRepCompletas = (deltaTempo/60)*n_individuos*max_geracoes*(numRep-(repeticoes+1))*1;
+            temposGeracoesCompletas = (deltaTempo/60)*n_individuos*(max_geracoes-(geracao))*1*1;
+            temposIndividuosCompletos = (deltaTempo/60)*(n_individuos-(numIndiv))*1*1*1;
+            aux = temposIterCompletas + temposRepCompletas + temposGeracoesCompletas + temposIndividuosCompletos;
             dias = floor(aux/(60*24));
             horas = floor(aux/60-24*dias);
             minutos = ceil(aux-24*60*dias-60*horas);
             tempoPrevisto = sprintf("%.2d dias, %.2d horas e %.0f minutos",dias,horas,minutos);
         end
+        
+        
+        %%%%%%%%%%%%%%%%%%%%%%%%%%LIMITAÇOES REALISTICAS%%%%%%%%%%%%%%%%%%%
+        %%%%%%%%%%%0.2 nm já é limite realístico%%%%%%%%%%%%%%%%
+        if(z(6)<0.1)
+            z(6) = 0.1;
+        end        
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         
         %%%%%%%%%%NORMALIZACAO%%%%%%%%%%
         %Deve ficar de 0 a 1, quanto maior, melhor
@@ -140,6 +157,8 @@ end
         norm_z(6) = ((3*(z(6)+1))/(1+9.381136e-01))^-1;                  %Dist - MINIMIZE
         norm_z(7) = ((3*(z(7)+1))/(1+6.076570e-01))^-1;                            %Reflec - MINIMIZE
         norm_z_com_PESO = norm_z.*(PESO);
+
+        
 
         for i=1:7
             if(norm_z(i)>maior(i))
@@ -187,7 +206,7 @@ end
         if(print&&countSuccesses>50) %Se tiver menos que 50 sucessos, resultado Ã© ruim
             date = clock;
             matFileName = sprintf('./Dados/%.2d_%.2d_%.2d-%.2dh%.2dmin.mat',date(1),date(2),date(3),date(4),date(5));
-            save(matFileName,'vars','z','norm_z','PESO','countSuccesses','countErrors','METODO','maior','range','repeticoes' ,'parametrosOtimizacao','delta','tempoExec','numIter','iter','numRep','dataInicio')
+            save(matFileName,'vars','z','norm_z','PESO','countSuccesses','countErrors','METODO','maior','range','repeticoes' ,'parametrosOtimizacao','delta','tempoExec','numIter','iter','numRep','dataInicio','dispersion')
         end
         
         
@@ -196,7 +215,7 @@ end
         fprintf('\n....................................................................................................');
         fprintf('\nRESULTADOS PARCIAIS:\nIter:%d/%d\t\t\tRepeticao %d/%d\t\t\tGeracao %d/%d\t\t\tIndividuo %d/%d',iter+1,numIter,repeticoes+1,numRep,geracao,max_geracoes,numIndiv,n_individuos);
         fprintf('\nAcertos: %d\t\t\tErros: %d\t\t\t', countSuccesses, countErrors);
-        fprintf('\nComeçou: %s\t\t\tTempo Total Previsto: %s', dataInicio, tempoPrevisto);
+        fprintf('\nComeçou: %s\t\t\tTempo RESTANTE Previsto: %s', dataInicio, tempoPrevisto);
         %fprintf('\t\t\tGerados: %d', countGen);
         %fprintf(' (delta = %.1f%%).', delta*100);
         norm_z = norm_z

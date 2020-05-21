@@ -1,9 +1,10 @@
-function z = Reflectance_adapted(vars)
+function z = Reflectance_final_results(vars)
     z = zeros(1,7);
     global print;
     global range;
     global plota;
     global erro;
+    global bons;
     %Constants
     h = 6.626e-34; %Plank constant [J.s]
     hbar = h/(2*pi);
@@ -28,10 +29,7 @@ function z = Reflectance_adapted(vars)
     T = 10; %Sample temperature 
     teta0 = 0*(pi/180); %Light incident angle [rad], in relation to normal of the sample
     phi = 0*(pi/180); %Polarization angle (0 = TE, pi/2 = TM) [rad]
-    shift = 0;
-    if(size(vars,1)==6)
-        shift = vars(6); %Cavity shift [nm]
-    end
+    shift = 0; %Cavity shift [nm]
     
     
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -76,9 +74,9 @@ function z = Reflectance_adapted(vars)
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     %Dispersion curves
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    lambda_1 = linspace(825, lambdaR - range-1, 500); %Spectrum
+    lambda_1 = linspace(700, lambdaR - range-1, 1000); %Spectrum
     lambda_2 = linspace(lambdaR - range, lambdaR + range, 5000); %Spectrum
-    lambda_3 = linspace(lambdaR + range+1, 975, 500); %Spectrum
+    lambda_3 = linspace(lambdaR + range+1, 1100, 1000); %Spectrum
     lambda = [lambda_1 lambda_2 lambda_3];
 
     for b = 1 : length(lambda)
@@ -90,12 +88,18 @@ function z = Reflectance_adapted(vars)
     end
 
     if(plota)
-        figure()
+        figure(bons)
+        warning off
+        titulo = sprintf('Melhor Resultado %d',bons);
+        
+        suptitle(titulo);
+        subplot(3,2,1);
         plot(lambda,n_1,':',lambda,n_2,'--',lambda,n_3,'r',lambda,n_4,'k',lambda,n_qw,'--k' )
         xlabel('Wavelength (nm)')
         ylabel('Refractive Index')
         title('Dispersion for Al_{x}Ga_{x-1}As','FontSize',12)
         legend('1st layer','2nd layer','Cavity','GaAs','InGaAs')
+        warning on
     end
     
     
@@ -113,7 +117,7 @@ function z = Reflectance_adapted(vars)
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     %Building the sample
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    [xT xqwT xbT xcavHT xcavT Lc] = Sample_3(s,ncs,nci,N,xqw,xb,c1,c2,c3,c4,cqw,lambdaR,T,teta0,shift);
+    [xT xqwT xbT xcavHT xcavT Lc] = Sample_3_final_results(s,ncs,nci,N,xqw,xb,c1,c2,c3,c4,cqw,lambdaR,T,teta0,shift);
     ac=0;
 
     
@@ -353,7 +357,8 @@ function z = Reflectance_adapted(vars)
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
     if(plota)
-        figure()
+        figure(bons)        
+        subplot(3,2,3)
         plot(lambda,R,'r', lambda,G,'b');%, lambda,Transm,'k')
         xlabel('Wavelength (nm)')
         ylabel('Reflectivity')
@@ -362,14 +367,10 @@ function z = Reflectance_adapted(vars)
     
     data = [lambda' R'];
     save('Reflectance.dat','data','-ascii');
-    % figure(4)
-    % plot(lambda,absMic)
-    % xlabel('Wavelength (nm)')
-    % ylabel('Absorption')
-    % title('Absorption for the microcavity','FontSize',12)
 
     if(plota)
-        figure()
+        figure(bons)
+        subplot(3,2,4)
         plot(lambda,phase)
         xlabel('Wavelength (nm)')
         ylabel('Phase')
@@ -465,10 +466,11 @@ function z = Reflectance_adapted(vars)
         q = q+1;
     end
 
-    if(plota)
-         figure()
-         plot(lambv,Reflec)
-    end
+%     if(plota)
+%          figure(bons)
+%          subplot(3,2,5)
+%          plot(lambv,Reflec)
+%     end
     
     for b=1:length(lambda)
         if lambda(b) >= lambmin
