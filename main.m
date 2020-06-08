@@ -6,7 +6,7 @@ global range delta maior METODO print plota saveErrors countGen repeticoes;
 global erro countErrors countSuccesses PESO geracao numIndiv;
 global tempoExec F n_individuos chance_mutacao erro_parada geracoes_parada max_geracoes parametrosOtimizacao;
 global iter numIter numRep dataInicio dispersion; 
-iter = 1;
+iter = 0;
 numIter = 4;
 numRep = 5;
 inicio = clock;
