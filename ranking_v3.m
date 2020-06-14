@@ -7,15 +7,15 @@ plotarTodosFitness = 0; %Ou só a media?
 
 ds = datastore("./Dados",'FileExtensions',{'.mat'},'Type','tabulartext');
 tamanho = size(ds.Files);
-global bons dispersion;
-dispersion = 1;
+global bons;
 bons=0;
 qtdd = 0;
 k=1;
 original_vars = [0 0.9 0 20 20];
 global range;
-range = 50;
-original =  Reflectance_adapted(original_vars);
+s = 1; %Cavity order (multiple of lambda/2)
+range = 20;
+original =  Reflectance_adapted(original_vars,s);
 fileID = fopen('rank_new.txt','w');
 fprintf(fileID,'RANKING MELHORES RESULTADOS\n\n');
 fclose(fileID);

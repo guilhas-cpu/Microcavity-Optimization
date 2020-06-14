@@ -5,10 +5,12 @@ ds = datastore("./Dados",'FileExtensions',{'.jpg','.mat'},'Type','tabulartext');
 
 tamanho = size(ds.Files);
 
-for i=1:tamanho(1)
-   dado = string(ds.Files(i)); 
+for i=(tamanho(1)-19):tamanho(1)
+   dado = string(ds.Files(i)) 
    i = i
-   Teste_Resultado_final_adapted_v2(dado,'restore.txt'); 
+   load(dado)
+   s=2;
+   save(dado,'vars','z','norm_z','PESO','countSuccesses','countErrors','METODO','maior','range','repeticoes' ,'parametrosOtimizacao','delta','tempoExec','numIter','iter','numRep','dataInicio','dispersion','s')
 end
 
 

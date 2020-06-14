@@ -5,7 +5,8 @@ close all;
 global range delta maior METODO print plota saveErrors countGen repeticoes;
 global erro countErrors countSuccesses PESO geracao numIndiv;
 global tempoExec F n_individuos chance_mutacao erro_parada geracoes_parada max_geracoes parametrosOtimizacao;
-global iter numIter numRep dataInicio dispersion; 
+global iter numIter numRep dataInicio dispersion isLambdaR1;
+isLambdaR1=1;
 iter = 0;
 numIter = 4;
 numRep = 5;
@@ -36,16 +37,12 @@ while(iter<numIter)
        switch iter
            case 0
                PESO = [5 21 1 5 6 15 25]; %favor escolher valores maiores ou iguais a 1. 
-               dispersion = 1;
            case 1
                PESO = [5 24 1 5 6 15 25]; %favor escolher valores maiores ou iguais a 1.  
-               dispersion = 1;
            case 2
                PESO = [5 21 1 5 6 15 25]; %favor escolher valores maiores ou iguais a 1. 
-               dispersion = 2;
            case 3
                PESO = [5 24 1 5 6 15 25]; %favor escolher valores maiores ou iguais a 1. 
-               dispersion = 2;
         end
         
         %Quanto maior o peso, maior a relevância do objetivo caso metodo 1 e o contrario caso metodo 2
@@ -58,9 +55,10 @@ while(iter<numIter)
         a.adicionarParametro('c01', 'real', [0 1]);
         a.adicionarParametro('c02', 'real', [0 1]);
         a.adicionarParametro('c03', 'real', [0 1]);
-        a.adicionarParametro('ncs', 'inteiro', [10 25]);
-        a.adicionarParametro('nci', 'inteiro', [10 25]);
-        a.adicionarParametro('shift', 'real', [0 20]);
+        a.adicionarParametro('ncs', 'inteiro', [10 20]);
+        a.adicionarParametro('nci', 'inteiro', [10 20]);
+        %a.adicionarParametro('shift', 'real', [0 20]);
+        a.adicionarParametro('lambdaR1', 'inteiro', [-10 10]);
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
         a.adicionarRestricao(@funcao_restricao_area, 'c01', 'c02', 'c03', 'ncs', 'nci');
@@ -116,10 +114,12 @@ end
 
     function y = funcao_objetivo(vars)
         global erro repeticoes saveErrors countErrors countSuccesses PESO print METODO maior geracao numIndiv;
-        global range countGen delta parametrosOtimizacao tempoExec dispersion; 
+        global range countGen delta parametrosOtimizacao tempoExec isLambdaR1; 
         global iter numIter numRep n_individuos max_geracoes dataInicio deltaTempo tempoPrevisto;
+        s = 2;
+        dispersion =1;
         norm_z = zeros(1,7);
-        z = Reflectance_adapted(vars);
+        z = Reflectance_adapted(vars,s);
         %%%%%%%%ANALISE DE TEMPO%%%%%%%%%%%%
         if(numIndiv==1&&geracao>1)
             deltaTempo = 0;
@@ -206,7 +206,7 @@ end
         if(print&&countSuccesses>50) %Se tiver menos que 50 sucessos, resultado é ruim
             date = clock;
             matFileName = sprintf('./Dados/%.2d_%.2d_%.2d-%.2dh%.2dmin.mat',date(1),date(2),date(3),date(4),date(5));
-            save(matFileName,'vars','z','norm_z','PESO','countSuccesses','countErrors','METODO','maior','range','repeticoes' ,'parametrosOtimizacao','delta','tempoExec','numIter','iter','numRep','dataInicio','dispersion')
+            save(matFileName,'vars','z','norm_z','PESO','countSuccesses','countErrors','METODO','maior','range','repeticoes' ,'parametrosOtimizacao','delta','tempoExec','numIter','iter','numRep','dataInicio','dispersion','s','isLambdaR1')
         end
         
         

@@ -1,4 +1,4 @@
-function z = Reflectance_final_results(vars)
+function z = Reflectance_final_results(vars,s)
     z = zeros(1,7);
     global print;
     global range;
@@ -20,8 +20,6 @@ function z = Reflectance_final_results(vars)
     n0 = 1.45; %Refractive index of the external medium
     ncs = vars(4); %Number of pair of layers for the upper DBR 
     nci = vars(5); %Number of pair of layers for the bottom DBR 
-    lambdaR1 = 898; %Ressonant wavelength at 300K [nm]
-    s = 1; %Cavity order (multiple of lambda/2)
     N=3; % QWs number
     xqw = 7.5; %QWs thickness [nm] at 300K (all will be equal)
     xb = 5; %Barreir thickness [nm] at 300K (all will be equal)
@@ -30,7 +28,11 @@ function z = Reflectance_final_results(vars)
     teta0 = 0*(pi/180); %Light incident angle [rad], in relation to normal of the sample
     phi = 0*(pi/180); %Polarization angle (0 = TE, pi/2 = TM) [rad]
     shift = 0; %Cavity shift [nm]
-    
+    lambdaR1 = 898;
+    if(size(vars,1)==6) 
+        shift = vars(6); %Cavity shift [nm] %remover essa variavel de otimização
+        %lambdaR1 = vars(6); %Ressonant wavelength at 300K [nm] %nova variavel de otimização --> +-10nm (valor inteiro)
+    end
     
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     % Change on the ressonance wavelength as function of applied bias
