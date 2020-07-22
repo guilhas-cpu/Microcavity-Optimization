@@ -19,7 +19,7 @@ classdef EvolucaoDiferencial < handle
         populacao = struct(), num_individuos,
         
         % Maior FITNESS encontrado
-        maiorFIT, maiorFITGer,
+        maiorFIT, maiorFITGer, matrizTodasFIT
         
         % Peso para calculo do vetor ruido
         F,
@@ -69,6 +69,7 @@ classdef EvolucaoDiferencial < handle
             obj.quant_geracos_erro = quant_geracos_erro;
             obj.max_geracoes = max_geracoes;
             obj.maiorFITGer = zeros(max_geracoes, 1);
+            obj.matrizTodasFIT = zeros(max_geracoes, num_individuos); 
         end
         
     end

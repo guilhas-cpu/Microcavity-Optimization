@@ -17,7 +17,7 @@ function z = Reflectance_final_results(vars,s)
     c3 = vars(3); %x=0.7 - Al mole fraction in the cavity (0 - 1)
     c4 = 0; % x=0 - Al mole fraction in the cap layer, substrate (0 - 1)
     cqw = 0.13; %In mole fraction in InGaAs for QW refractive index; 0 is the GaAs.
-    n0 = 1.45; %Refractive index of the external medium
+    n0 = 1; %Refractive index of the external medium
     ncs = vars(4); %Number of pair of layers for the upper DBR 
     nci = vars(5); %Number of pair of layers for the bottom DBR 
     N=3; % QWs number
@@ -30,8 +30,7 @@ function z = Reflectance_final_results(vars,s)
     shift = 0; %Cavity shift [nm]
     lambdaR1 = 898;
     if(size(vars,1)==6) 
-        shift = vars(6); %Cavity shift [nm] %remover essa variavel de otimização
-        %lambdaR1 = vars(6); %Ressonant wavelength at 300K [nm] %nova variavel de otimização --> +-10nm (valor inteiro)
+        shift = vars(6); %Cavity shift [nm]        
     end
     
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -76,9 +75,9 @@ function z = Reflectance_final_results(vars,s)
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     %Dispersion curves
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    lambda_1 = linspace(700, lambdaR - range-1, 1000); %Spectrum
-    lambda_2 = linspace(lambdaR - range, lambdaR + range, 5000); %Spectrum
-    lambda_3 = linspace(lambdaR + range+1, 1100, 1000); %Spectrum
+    lambda_1 = linspace(700, lambdaR - range-1, 500); %Spectrum
+    lambda_2 = linspace(lambdaR - range, lambdaR + range, 10000); %Spectrum
+    lambda_3 = linspace(lambdaR + range+1, 1100, 500); %Spectrum
     lambda = [lambda_1 lambda_2 lambda_3];
 
     for b = 1 : length(lambda)
@@ -666,7 +665,7 @@ function z = Reflectance_final_results(vars,s)
     Dist = sqrt((lambda(u) - lamb_QW)^2);
     
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    %Assining Results
+    %Assigning Results
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     z(1) = beta; %MAXIMIZE
     z(2) = Q; %MAXIMIZE

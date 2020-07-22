@@ -1,5 +1,5 @@
 function n = Dispersion(c,lambda,T)
-    dispersion = 1; %Após análise dos resultados tops, percebi que o código 1 costuma ter resultados melhores.
+    dispersion = 2; %fixado apos reuniao com o Eduardo
     if(dispersion==1)
         %Sellmeier coefficients
 

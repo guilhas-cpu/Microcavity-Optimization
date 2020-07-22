@@ -1,4 +1,4 @@
-function z = Reflectance_adapted(vars,s)
+function z = Reflectance_adapted(vars)
     z = zeros(1,7);
     global print;
     global range;
@@ -16,11 +16,10 @@ function z = Reflectance_adapted(vars,s)
     c3 = vars(3); %x=0.7 - Al mole fraction in the cavity (0 - 1)
     c4 = 0; % x=0 - Al mole fraction in the cap layer, substrate (0 - 1)
     cqw = 0.13; %In mole fraction in InGaAs for QW refractive index; 0 is the GaAs.
-    n0 = 1.45; %Refractive index of the external medium
+    n0 = 1; %Refractive index of the external medium
     ncs = vars(4); %Number of pair of layers for the upper DBR 
     nci = vars(5); %Number of pair of layers for the bottom DBR 
-
-
+    s= 1; %s=2 é uma má ideia, nunca dá resultados melhores que igual a 1
     N=3; % QWs number
     xqw = 7.5; %QWs thickness [nm] at 300K (all will be equal)
     xb = 5; %Barreir thickness [nm] at 300K (all will be equal)
@@ -31,8 +30,7 @@ function z = Reflectance_adapted(vars,s)
     shift = 0;
     lambdaR1 = 898;
     if(size(vars,1)==6) 
-        %shift = vars(6); %Cavity shift [nm] %remover essa variavel de otimização
-        lambdaR1 = lambdaR1 + vars(6); %Ressonant wavelength at 300K [nm] %nova variavel de otimização --> +-10nm (valor inteiro)
+        shift = vars(6); %Cavity shift [nm] 
     end
 
 
@@ -80,9 +78,9 @@ function z = Reflectance_adapted(vars,s)
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     %Dispersion curves
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    lambda_1 = linspace(825, lambdaR - range-1, 500); %Spectrum
+    lambda_1 = linspace(850, lambdaR - range-1, 50); %Spectrum
     lambda_2 = linspace(lambdaR - range, lambdaR + range, 5000); %Spectrum
-    lambda_3 = linspace(lambdaR + range+1, 975, 500); %Spectrum
+    lambda_3 = linspace(lambdaR + range+1, 950, 50); %Spectrum
     lambda = [lambda_1 lambda_2 lambda_3];
 
     for b = 1 : length(lambda)
@@ -666,7 +664,7 @@ function z = Reflectance_adapted(vars,s)
     Dist = sqrt((lambda(u) - lamb_QW)^2);
     
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    %Assining Results
+    %Assigning Results
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     z(1) = beta; %MAXIMIZE
     z(2) = Q; %MAXIMIZE

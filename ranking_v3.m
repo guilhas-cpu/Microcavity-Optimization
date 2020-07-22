@@ -13,10 +13,9 @@ qtdd = 0;
 k=1;
 original_vars = [0 0.9 0 20 20];
 global range;
-s = 1; %Cavity order (multiple of lambda/2)
 range = 20;
-original =  Reflectance_adapted(original_vars,s);
-fileID = fopen('rank_new.txt','w');
+original =  Reflectance_adapted(original_vars);
+fileID = fopen('rank.txt','w');
 fprintf(fileID,'RANKING MELHORES RESULTADOS\n\n');
 fclose(fileID);
 warning off;
@@ -25,7 +24,7 @@ if(analisarRank)
        dado = string(ds.Files(i)); 
        load(dado);
        %fator de qualidade
-       if(z(2)<10000)
+       if(z(2)<12000)
            bad = 1;
        elseif(size(z)<7)
            bad = 1;
@@ -38,7 +37,7 @@ if(analisarRank)
            bons = bons+1;
            rank(bons) = dado;
            
-           Teste_Resultado_final_adapted_v3(rank(bons),'rank_new.txt',original,1);  
+           Teste_Resultado_final_adapted_v3(rank(bons),'rank.txt',original,1);  
            
        end
     end
@@ -50,7 +49,7 @@ if(analisarFitness)
        load(dado);
        if(exist('parametrosOtimizacao','var')==0)
            bad = 1;
-       elseif(i>(tamanho(1)-60))
+       elseif(i>(tamanho(1)-100))
            if(k==1)
                 fitness = zeros(15,parametrosOtimizacao.rodadas); 
            end

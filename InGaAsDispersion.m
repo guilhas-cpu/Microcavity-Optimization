@@ -15,5 +15,5 @@ EgInGaAs = EgGaAs - (cIn*1.56) + (cIn^2)*0.494; %InGaAs Gap Energy [eV]
 
 lambInGaAs = h*v*(1e9)/(e*EgInGaAs); %Wavelength InGaAs Gap [nm]
 
-nInGaAs = 3.5484;%sqrt(AInGaAs + BInGaAs/(1-(CInGaAs*EgGaAs/(lambda*EgInGaAs))^2));
+nInGaAs = sqrt(AInGaAs + BInGaAs/(1-(CInGaAs*EgGaAs/(lambda*EgInGaAs))^2)); %3.5484;
 end

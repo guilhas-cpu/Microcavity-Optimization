@@ -5,11 +5,11 @@ close all;
 global range delta maior METODO print plota saveErrors countGen repeticoes;
 global erro countErrors countSuccesses PESO geracao numIndiv;
 global tempoExec F n_individuos chance_mutacao erro_parada geracoes_parada max_geracoes parametrosOtimizacao;
-global iter numIter numRep dataInicio isLambdaR1;
-isLambdaR1=1;
-iter = 0; 
-numIter = 2;
-numRep = 5;
+global iter numIter numRep dataInicio dispersion isLambdaR1;
+isLambdaR1=0;
+iter = 0;
+numIter = 1;
+numRep = 30;
 inicio = clock;
 dataInicio = sprintf('%.2d/%.2d/%.2d-%.2dh%.2dmin',inicio(3),inicio(2),inicio(1),inicio(4),inicio(5));
 
@@ -33,13 +33,8 @@ while(iter<numIter)
         countSuccesses = 0;
         countGen = 0;
         saveErrors = 0;
-        
-       switch iter
-           case 0
-               PESO = [5 21 1 5 6 15 25]; %favor escolher valores maiores ou iguais a 1. 
-           case 1
-               PESO = [5 24 1 5 6 15 25]; %favor escolher valores maiores ou iguais a 1.  
-        end
+        PESO = [5 21 1 5 6 15 25]; %favor escolher valores maiores ou iguais a 1.
+
         
         %Quanto maior o peso, maior a relevância do objetivo caso metodo 1 e o contrario caso metodo 2
 
@@ -51,10 +46,15 @@ while(iter<numIter)
         a.adicionarParametro('c01', 'real', [0 1]);
         a.adicionarParametro('c02', 'real', [0 1]);
         a.adicionarParametro('c03', 'real', [0 1]);
-        a.adicionarParametro('ncs', 'inteiro', [10 20]);
-        a.adicionarParametro('nci', 'inteiro', [10 20]);
-        %a.adicionarParametro('shift', 'real', [0 20]);
-        a.adicionarParametro('lambdaR1', 'inteiro', [-10 10]);
+        switch iter
+            case 0
+                a.adicionarParametro('ncs', 'inteiro', [10 25]);
+                a.adicionarParametro('nci', 'inteiro', [10 25]);
+            case 1
+                a.adicionarParametro('ncs', 'inteiro', [10 20]);
+                a.adicionarParametro('nci', 'inteiro', [10 20]);
+        end
+        a.adicionarParametro('shift', 'real', [0 20]);
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
         a.adicionarRestricao(@funcao_restricao_area, 'c01', 'c02', 'c03', 'ncs', 'nci');
@@ -112,10 +112,10 @@ end
         global erro repeticoes saveErrors countErrors countSuccesses PESO print METODO maior geracao numIndiv;
         global range countGen delta parametrosOtimizacao tempoExec isLambdaR1; 
         global iter numIter numRep n_individuos max_geracoes dataInicio deltaTempo tempoPrevisto;
-        s = 1;
-        dispersion = 1;
+        dispersion =1;
+        s = 1; %default
         norm_z = zeros(1,7);
-        z = Reflectance_adapted(vars,s);
+        z = Reflectance_adapted(vars);
         %%%%%%%%ANALISE DE TEMPO%%%%%%%%%%%%
         if(numIndiv==1&&geracao>1)
             deltaTempo = 0;
@@ -199,7 +199,7 @@ end
             countSuccesses = countSuccesses+1; %sem ponto e virgula vai imprimir na tela toda hora
         end
 
-        if(print&&countSuccesses>50) %Se tiver menos que 50 sucessos, resultado é ruim
+        if(print&&countSuccesses>1) %Se tiver menos que 50 sucessos, resultado eh ruim
             date = clock;
             matFileName = sprintf('./Dados/%.2d_%.2d_%.2d-%.2dh%.2dmin.mat',date(1),date(2),date(3),date(4),date(5));
             save(matFileName,'vars','z','norm_z','PESO','countSuccesses','countErrors','METODO','maior','range','repeticoes' ,'parametrosOtimizacao','delta','tempoExec','numIter','iter','numRep','dataInicio','dispersion','s','isLambdaR1')

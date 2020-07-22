@@ -23,6 +23,7 @@ function gerarNovaPopulacao(obj)
     vetorERRO = zeros(obj.num_individuos, 1);
     for i = 1:obj.num_individuos
         vetorFIT(i) = obj.populacao(i).FITNESS;
+        obj.matrizTodasFIT(geracao, i) = vetorFIT(i);
         vetorERRO(i) = abs(obj.populacao(i).erro);
     end
 
