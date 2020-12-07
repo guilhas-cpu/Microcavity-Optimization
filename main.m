@@ -8,7 +8,7 @@ global tempoExec F n_individuos chance_mutacao erro_parada geracoes_parada max_g
 global iter numIter numRep dataInicio dispersion isLambdaR1;
 isLambdaR1=0;
 iter = 0;
-numIter = 2;
+numIter = 1;
 numRep = 30;
 inicio = clock;
 dataInicio = sprintf('%.2d/%.2d/%.2d-%.2dh%.2dmin',inicio(3),inicio(2),inicio(1),inicio(4),inicio(5));
@@ -145,13 +145,13 @@ end
         %Deve ficar de 0 a 1, quanto maior, melhor
         %Valores base de normalização de 3 vezes o valor encontrado no codigo enviado pelo
         %cotta
-        norm_z(1) = z(1)/(3*0.0118374112);                                   %beta - MAXIMIZE
-        norm_z(2) = z(2)/(3*5.281276e+03);                            %Q - MAXIMIZE
-        norm_z(3) = z(3)/(3*1.718943e-01);                                   %Fp - MAXIMIZE
+        norm_z(1) = z(1)/(3*0.0118374112);                              %beta - MAXIMIZE
+        norm_z(2) = z(2)/(3*5.281276e+03);                              %Q - MAXIMIZE
+        norm_z(3) = z(3)/(3*1.718943e-01);                              %Fp - MAXIMIZE
         norm_z(4) = ((3*(z(4)+1e10))/(1e10+9.397523e+08))^-1;           %DN -  MINIMIZE
-        norm_z(5) = ((3*(z(5)+2e-07))/(2e-07+9.546695e-08))^-1;        %Cav_loss - MINIMIZE
-        norm_z(6) = ((3*(z(6)+1))/(1+9.381136e-01))^-1;                  %Dist - MINIMIZE
-        norm_z(7) = ((3*(z(7)+1))/(1+6.076570e-01))^-1;                            %Reflec - MINIMIZE
+        norm_z(5) = ((3*(z(5)+2e-07))/(2e-07+9.546695e-08))^-1;         %Cav_loss - MINIMIZE
+        norm_z(6) = ((3*(z(6)+1))/(1+9.381136e-01))^-1;                 %Dist - MINIMIZE
+        norm_z(7) = ((3*(z(7)+1))/(1+6.076570e-01))^-1;                 %Reflec - MINIMIZE
         norm_z_com_PESO = norm_z.*(PESO);
 
         

@@ -92,7 +92,6 @@ function z = Reflectance_final_results(vars,s)
         figure(bons)
         warning off
         titulo = sprintf('Melhor Resultado %d',bons);
-        
         suptitle(titulo);
         subplot(3,2,1);
         plot(lambda,n_1,':',lambda,n_2,'--',lambda,n_3,'r',lambda,n_4,'k',lambda,n_qw,'--k' )

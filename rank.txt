@@ -3,170 +3,68 @@ RANKING MELHORES RESULTADOS
 
 
 
-dado: C:\Users\danic\OneDrive - ufmg.br\Desktop\Nanocomp_DifferentialEvolution\Dados\2020_04_09-08h23min.mat
+dado: C:\Users\danic\OneDrive - ufmg.br\햞ea de Trabalho\Nanocomp_DifferentialEvolution\Dados\2020_07_18-16h39min.mat
 VARIAVEIS DE ENTRADA:
-c1 = 0.03      c2 = 0.76      c3= 0.81      ncs= 23      nci= 25      shift= 0      lambdaR1= 898      range=  20      s= 1
+c1 = 0.02      c2 = 0.81      c3= 0.88      ncs= 23      nci= 25      shift= 1.020000e+00      lambdaR1= 898      range=  20      s= 1
 RESULTADOS BASE						NOVOS RESULTADOS					PERCENTUAL DE MELHORA
-beta = 1.183741e-02					beta = 1.175815e-02 					(-0.67%)
-Q = 5.583088e+03					Q = 1.168721e+04 					(109.33%)
-Fp = 1.855280e-01					Fp = 5.301007e-01 					(185.73%)
-DN = 3.554630e+08					DN = 1.564850e+08 					(127.15%)
-CavityLoss = 3.897465e-08				CavityLoss = 4.935453e-08 				(-21.03%)
-Distance = 5.221864e+00					Distance = 5.296830e-02 				(9758.47%)
-Reflec_min= 7.071959e-01				Reflec_min = 2.989194e-01 				(136.58%)
-PESOS:      5    20     1     5     6    15    25
-
-isLambdaR1= 0, dispesion= 1, METODO= 1, range= 20, s= 1
-
-
-
-dado: C:\Users\danic\OneDrive - ufmg.br\Desktop\Nanocomp_DifferentialEvolution\Dados\2020_04_10-18h11min.mat
-VARIAVEIS DE ENTRADA:
-c1 = 0.04      c2 = 0.80      c3= 0.93      ncs= 22      nci= 25      shift= 0      lambdaR1= 898      range=  20      s= 1
-RESULTADOS BASE						NOVOS RESULTADOS					PERCENTUAL DE MELHORA
-beta = 1.183741e-02					beta = 1.175835e-02 					(-0.67%)
-Q = 5.583088e+03					Q = 1.307041e+04 					(134.11%)
-Fp = 1.855280e-01					Fp = 6.284174e-01 					(238.72%)
-DN = 3.554630e+08					DN = 1.067018e+08 					(233.14%)
-CavityLoss = 3.897465e-08				CavityLoss = 3.989409e-08 				(-2.30%)
-Distance = 5.221864e+00					Distance = 5.070877e-01 				(929.78%)
-Reflec_min= 7.071959e-01				Reflec_min = 2.366267e-01 				(198.87%)
+beta = 1.183741e-02					beta = 1.168030e-02 					(-1.33%)
+Q = 5.317907e+03					Q = 1.480474e+04 					(178.39%)
+Fp = 1.767131e-01					Fp = 6.893548e-01 					(290.10%)
+DN = 3.732526e+08					DN = 4.539180e+07 					(722.29%)
+CavityLoss = 3.898073e-08				CavityLoss = 1.874137e-08 				(107.99%)
+Distance = 5.217117e+00					Distance = 3.037304e-03 				(171668.05%)
+Reflec_min= 7.061180e-01				Reflec_min = 4.397728e-01 				(60.56%)
 PESOS:      5    21     1     5     6    15    25
 
 isLambdaR1= 0, dispesion= 1, METODO= 1, range= 20, s= 1
 
 
 
-dado: C:\Users\danic\OneDrive - ufmg.br\Desktop\Nanocomp_DifferentialEvolution\Dados\2020_04_16-22h39min.mat
+dado: C:\Users\danic\OneDrive - ufmg.br\햞ea de Trabalho\Nanocomp_DifferentialEvolution\Dados\2020_07_22-10h28min.mat
 VARIAVEIS DE ENTRADA:
-c1 = 0.03      c2 = 0.81      c3= 0.90      ncs= 24      nci= 25      shift= 0      lambdaR1= 898      range=  20      s= 1
+c1 = 0.02      c2 = 0.81      c3= 0.86      ncs= 22      nci= 25      shift= 8.500000e-01      lambdaR1= 898      range=  20      s= 1
 RESULTADOS BASE						NOVOS RESULTADOS					PERCENTUAL DE MELHORA
-beta = 1.183741e-02					beta = 1.175846e-02 					(-0.67%)
-Q = 5.583088e+03					Q = 1.480014e+04 					(165.09%)
-Fp = 1.855280e-01					Fp = 6.996794e-01 					(277.13%)
-DN = 3.554630e+08					DN = 4.006808e+07 					(787.15%)
-CavityLoss = 3.897465e-08				CavityLoss = 1.667947e-08 				(133.67%)
-Distance = 5.221864e+00					Distance = 2.729903e-01 				(1812.84%)
-Reflec_min= 7.071959e-01				Reflec_min = 5.340290e-01 				(32.43%)
-PESOS:      5    25     1     5     6    15    25
-
-isLambdaR1= 0, dispesion= 1, METODO= 1, range= 20, s= 1
-
-
-
-dado: C:\Users\danic\OneDrive - ufmg.br\Desktop\Nanocomp_DifferentialEvolution\Dados\2020_04_24-16h25min.mat
-VARIAVEIS DE ENTRADA:
-c1 = 0.03      c2 = 0.76      c3= 0.84      ncs= 24      nci= 25      shift= 0      lambdaR1= 898      range=  20      s= 1
-RESULTADOS BASE						NOVOS RESULTADOS					PERCENTUAL DE MELHORA
-beta = 1.183741e-02					beta = 1.175451e-02 					(-0.70%)
-Q = 5.583088e+03					Q = 1.306165e+04 					(133.95%)
-Fp = 1.855280e-01					Fp = 6.005021e-01 					(223.67%)
-DN = 3.554630e+08					DN = 1.036404e+08 					(242.98%)
-CavityLoss = 3.897465e-08				CavityLoss = 3.704027e-08 				(5.22%)
-Distance = 5.221864e+00					Distance = 8.897190e-02 				(5769.12%)
-Reflec_min= 7.071959e-01				Reflec_min = 4.141215e-01 				(70.77%)
-PESOS:      5    20     1     5     6    15    25
-
-isLambdaR1= 0, dispesion= 1, METODO= 1, range= 20, s= 1
-
-
-
-dado: C:\Users\danic\OneDrive - ufmg.br\Desktop\Nanocomp_DifferentialEvolution\Dados\2020_04_28-14h20min.mat
-VARIAVEIS DE ENTRADA:
-c1 = 0.03      c2 = 0.87      c3= 0.96      ncs= 22      nci= 25      shift= 0      lambdaR1= 898      range=  20      s= 1
-RESULTADOS BASE						NOVOS RESULTADOS					PERCENTUAL DE MELHORA
-beta = 1.183741e-02					beta = 1.175189e-02 					(-0.72%)
-Q = 5.583088e+03					Q = 1.586265e+04 					(184.12%)
-Fp = 1.855280e-01					Fp = 7.720088e-01 					(316.11%)
-DN = 3.554630e+08					DN = 2.941613e+07 					(1108.39%)
-CavityLoss = 3.897465e-08				CavityLoss = 1.351871e-08 				(188.30%)
-Distance = 5.221864e+00					Distance = 2.703970e-02 				(19211.84%)
-Reflec_min= 7.071959e-01				Reflec_min = 4.557972e-01 				(55.16%)
-PESOS:      5    20     1     5     6    15    25
-
-isLambdaR1= 0, dispesion= 1, METODO= 1, range= 20, s= 1
-
-
-
-dado: C:\Users\danic\OneDrive - ufmg.br\Desktop\Nanocomp_DifferentialEvolution\Dados\2020_05_06-01h07min.mat
-VARIAVEIS DE ENTRADA:
-c1 = 0.04      c2 = 0.81      c3= 0.92      ncs= 24      nci= 25      shift= 0      lambdaR1= 898      range=  20      s= 1
-RESULTADOS BASE						NOVOS RESULTADOS					PERCENTUAL DE MELHORA
-beta = 1.183741e-02					beta = 1.175318e-02 					(-0.71%)
-Q = 5.583088e+03					Q = 1.587350e+04 					(184.31%)
-Fp = 1.855280e-01					Fp = 7.595590e-01 					(309.40%)
-DN = 3.554630e+08					DN = 4.212231e+07 					(743.88%)
-CavityLoss = 3.897465e-08				CavityLoss = 1.904379e-08 				(104.66%)
-Distance = 5.221864e+00					Distance = 6.351005e-01 				(722.21%)
-Reflec_min= 7.071959e-01				Reflec_min = 5.101712e-01 				(38.62%)
-PESOS:      5    24     1     5     6    15    25
-
-isLambdaR1= 0, dispesion= 1, METODO= 1, range= 20, s= 1
-
-
-
-dado: C:\Users\danic\OneDrive - ufmg.br\Desktop\Nanocomp_DifferentialEvolution\Dados\2020_05_21-09h23min.mat
-VARIAVEIS DE ENTRADA:
-c1 = 0.00      c2 = 0.75      c3= 0.94      ncs= 25      nci= 25      shift= 3.070000e+00      lambdaR1= 898      range=  20      s= 1
-RESULTADOS BASE						NOVOS RESULTADOS					PERCENTUAL DE MELHORA
-beta = 1.183741e-02					beta = 1.152583e-02 					(-2.63%)
-Q = 5.583088e+03					Q = 1.481480e+04 					(165.35%)
-Fp = 1.855280e-01					Fp = 7.017768e-01 					(278.26%)
-DN = 3.554630e+08					DN = 3.940365e+07 					(802.11%)
-CavityLoss = 3.897465e-08				CavityLoss = 1.678411e-08 				(132.21%)
-Distance = 5.221864e+00					Distance = 6.070977e-01 				(760.14%)
-Reflec_min= 7.071959e-01				Reflec_min = 5.509547e-01 				(28.36%)
-PESOS:      5    24     1     5     6    15    25
-
-isLambdaR1= 0, dispesion= 1, METODO= 1, range= 20, s= 1
-
-
-
-dado: C:\Users\danic\OneDrive - ufmg.br\Desktop\Nanocomp_DifferentialEvolution\Dados\2020_05_22-07h46min.mat
-VARIAVEIS DE ENTRADA:
-c1 = 0.01      c2 = 0.83      c3= 0.97      ncs= 23      nci= 25      shift= 8.300000e-01      lambdaR1= 898      range=  20      s= 1
-RESULTADOS BASE						NOVOS RESULTADOS					PERCENTUAL DE MELHORA
-beta = 1.183741e-02					beta = 1.169023e-02 					(-1.24%)
-Q = 5.583088e+03					Q = 1.707908e+04 					(205.91%)
-Fp = 1.855280e-01					Fp = 8.302821e-01 					(347.52%)
-DN = 3.554630e+08					DN = 2.497675e+07 					(1323.18%)
-CavityLoss = 3.897465e-08				CavityLoss = 1.241005e-08 				(214.06%)
-Distance = 5.221864e+00					Distance = 1.689799e-01 				(2990.23%)
-Reflec_min= 7.071959e-01				Reflec_min = 5.102369e-01 				(38.60%)
-PESOS:      5    24     1     5     6    15    25
-
-isLambdaR1= 0, dispesion= 1, METODO= 1, range= 20, s= 1
-
-
-
-dado: C:\Users\danic\OneDrive - ufmg.br\Desktop\Nanocomp_DifferentialEvolution\Dados\2020_06_22-17h11min.mat
-VARIAVEIS DE ENTRADA:
-c1 = 0.03      c2 = 0.85      c3= 0.89      ncs= 23      nci= 25      shift= 0      lambdaR1= 898      range=  20      s= 1
-RESULTADOS BASE						NOVOS RESULTADOS					PERCENTUAL DE MELHORA
-beta = 1.183741e-02					beta = 1.175365e-02 					(-0.71%)
-Q = 5.583088e+03					Q = 1.707785e+04 					(205.89%)
-Fp = 1.855280e-01					Fp = 8.033327e-01 					(333.00%)
-DN = 3.554630e+08					DN = 2.716535e+07 					(1208.52%)
-CavityLoss = 3.897465e-08				CavityLoss = 1.298892e-08 				(200.06%)
-Distance = 5.221864e+00					Distance = 2.329863e-01 				(2141.28%)
-Reflec_min= 7.071959e-01				Reflec_min = 5.290474e-01 				(33.67%)
+beta = 1.183741e-02					beta = 1.169390e-02 					(-1.21%)
+Q = 5.317907e+03					Q = 1.387863e+04 					(160.98%)
+Fp = 1.767131e-01					Fp = 6.408221e-01 					(262.63%)
+DN = 3.732526e+08					DN = 6.726381e+07 					(454.91%)
+CavityLoss = 3.898073e-08				CavityLoss = 2.578664e-08 				(51.17%)
+Distance = 5.217117e+00					Distance = 4.896790e-02 				(10554.16%)
+Reflec_min= 7.061180e-01				Reflec_min = 3.150098e-01 				(124.16%)
 PESOS:      5    21     1     5     6    15    25
 
-isLambdaR1= 1, dispesion= 1, METODO= 1, range= 20, s= 1
+isLambdaR1= 0, dispesion= 1, METODO= 1, range= 20, s= 1
 
 
 
-dado: C:\Users\danic\OneDrive - ufmg.br\Desktop\Nanocomp_DifferentialEvolution\Dados\2020_06_23-15h15min.mat
+dado: C:\Users\danic\OneDrive - ufmg.br\햞ea de Trabalho\Nanocomp_DifferentialEvolution\Dados\2020_08_03-11h46min.mat
 VARIAVEIS DE ENTRADA:
-c1 = 0.18      c2 = 0.91      c3= 0.96      ncs= 22      nci= 25      shift= 0      lambdaR1= 894      range=  20      s= 1
+c1 = 0.02      c2 = 0.84      c3= 0.95      ncs= 19      nci= 25      shift= 1.120000e+00      lambdaR1= 898      range=  20      s= 1
 RESULTADOS BASE						NOVOS RESULTADOS					PERCENTUAL DE MELHORA
-beta = 1.183741e-02					beta = 1.206115e-02 					(1.89%)
-Q = 5.583088e+03					Q = 1.235117e+04 					(121.22%)
-Fp = 1.855280e-01					Fp = 6.189654e-01 					(233.62%)
-DN = 3.554630e+08					DN = 1.210543e+08 					(193.64%)
-CavityLoss = 3.897465e-08				CavityLoss = 4.346032e-08 				(-10.32%)
-Distance = 5.221864e+00					Distance = 1.003137e+00 				(420.55%)
-Reflec_min= 7.071959e-01				Reflec_min = 2.051224e-01 				(244.77%)
-PESOS:      5    24     1     5     6    15    25
+beta = 1.183741e-02					beta = 1.167139e-02 					(-1.40%)
+Q = 5.317907e+03					Q = 1.110470e+04 					(108.82%)
+Fp = 1.767131e-01					Fp = 5.343014e-01 					(202.36%)
+DN = 3.732526e+08					DN = 1.340632e+08 					(178.42%)
+CavityLoss = 3.898073e-08				CavityLoss = 4.293471e-08 				(-9.21%)
+Distance = 5.217117e+00					Distance = 9.504650e-02 				(5389.02%)
+Reflec_min= 7.061180e-01				Reflec_min = 4.248093e-02 				(1562.20%)
+PESOS:      5    21     1     5     6    15    25
 
-isLambdaR1= 1, dispesion= 1, METODO= 1, range= 20, s= 1
+isLambdaR1= 0, dispesion= 1, METODO= 1, range= 20, s= 1
+
+
+
+dado: C:\Users\danic\OneDrive - ufmg.br\햞ea de Trabalho\Nanocomp_DifferentialEvolution\Dados\2020_08_05-00h43min.mat
+VARIAVEIS DE ENTRADA:
+c1 = 0.02      c2 = 0.83      c3= 0.96      ncs= 22      nci= 25      shift= 1.370000e+00      lambdaR1= 898      range=  20      s= 1
+RESULTADOS BASE						NOVOS RESULTADOS					PERCENTUAL DE MELHORA
+beta = 1.183741e-02					beta = 1.165477e-02 					(-1.54%)
+Q = 5.317907e+03					Q = 1.480627e+04 					(178.42%)
+Fp = 1.767131e-01					Fp = 7.148055e-01 					(304.50%)
+DN = 3.732526e+08					DN = 4.308060e+07 					(766.41%)
+CavityLoss = 3.898073e-08				CavityLoss = 1.848422e-08 				(110.89%)
+Distance = 5.217117e+00					Distance = 9.504650e-02 				(5389.02%)
+Reflec_min= 7.061180e-01				Reflec_min = 3.564585e-01 				(98.09%)
+PESOS:      5    21     1     5     6    15    25
+
+isLambdaR1= 0, dispesion= 1, METODO= 1, range= 20, s= 1

@@ -9,7 +9,7 @@ global iter numIter numRep dataInicio dispersion isLambdaR1;
 isLambdaR1=0;
 iter = 0;
 numIter = 1;
-numRep = 30;
+numRep = 10;
 inicio = clock;
 dataInicio = sprintf('%.2d/%.2d/%.2d-%.2dh%.2dmin',inicio(3),inicio(2),inicio(1),inicio(4),inicio(5));
 

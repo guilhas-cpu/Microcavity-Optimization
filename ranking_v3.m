@@ -2,8 +2,8 @@ clear all;
 clc;
 close all;
 analisarRank = 1;
-analisarFitness = 0;
-plotarTodosFitness = 0; %Ou só a media?
+analisarFitness = 1;
+plotarTodosFitness = 1; %Ou só a media?
 
 ds = datastore("./Dados",'FileExtensions',{'.mat'},'Type','tabulartext');
 tamanho = size(ds.Files);
@@ -70,9 +70,9 @@ if(analisarFitness)
                ylabel('Fitness');
                %legend(sprintf('%d',repeticoes));
            end
-           if(repeticoes==14)
-               legend('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14');
-               a = mean(fitness(1:15,:));
+           if(repeticoes==29)
+               legend('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29');
+               a = mean(fitness(1:30,:));
                a = transpose(a);
                hold off;
                if(size(a,1) == parametrosOtimizacao.rodadas)
